@@ -1,0 +1,11 @@
+<p>Upload your application documents one at a time.</p>
+<div id="documents" class="well">
+  <table class="table" id="documents_table">
+  </table>
+  <div class="actions">
+    <form id="new_document" class="form-inline">
+      <input type="text" id="document_description" placeholder="Description (e.g., 'resume', 'cover letter', etc">
+      <input type="submit" class="btn btn-success" value="Save">
+    </form>
+  </div>
+</div>

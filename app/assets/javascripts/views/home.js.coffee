@@ -25,3 +25,6 @@ class Zapply.Views.Home extends Backbone.View
 
   myDocumentsLink: ->
     "#{Zapply.session_link('My Documents').href}\">My Documents</a>"
+
+  leave: ->
+    @remove()

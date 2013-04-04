@@ -5,5 +5,6 @@ ZapplyLite::Application.routes.draw do
 
   namespace :api do
     resource :session
+    resources :documents
   end
 end

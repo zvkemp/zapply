@@ -1,0 +1,3 @@
+<th>Description:</th>
+<td><%= @document.get('description') %></td>
+<td><%= Math.random() %></td>
