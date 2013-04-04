@@ -1,7 +1,9 @@
-<div class="hero-unit">
+<div class="hero-unit" id="about_main">
   <h1>Program Manager</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, reiciendis, fugit dolorum nesciunt iste temporibus vero iusto aliquid. Enim voluptatibus facilis beatae distinctio repellendus eos ipsam qui ipsa quod ullam.</p>
-  <a href="#" class="btn btn-large btn-success">Apply Now</a>
+  <div id="actions">
+    <a href="#" class="btn btn-large btn-success">Apply Now</a>
+  </div>
 </div>
 
 <div class="row">

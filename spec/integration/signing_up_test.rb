@@ -35,15 +35,22 @@ describe "signing up :: integration" do
     page.text.must_include "Signed in successfully"
   end
 
-  it "displays the logged in user's email address" do
-    login
-    page.text.must_include @user.email
-  end
-
-  describe "user is already logged in" do
+  describe "user is logged in" do
     before do
       login
       visit root_path
+    end
+
+    it "displays the logged in user's email address" do
+      page.text.must_include @user.email
+    end
+
+    it "displays a my documents link in the hero unit" do
+      find('#about_main').text.must_include('My Documents')
+    end
+
+    it "displays a my documents link in the navigation bar" do
+      find('.navbar-inner').text.must_include 'My Documents'
     end
 
     it "doesn't display the sign-in link" do

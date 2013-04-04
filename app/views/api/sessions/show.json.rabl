@@ -4,6 +4,7 @@ if @user.is_a? User
   node(:logged_in) { true }
   node(:session_links) do 
     { 
+      'My Documents' => { 'href' => '#my_documents' },
       'sign out' => {
         'href'        => destroy_user_session_path,
         'data-method' => 'delete', 
