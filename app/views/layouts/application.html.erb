@@ -7,9 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="container">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <a href="#" class="brand offset1"><span class="white">zapp</span>.ly</a>
+      <div id="backbone_navigation" class="pull-right">
+      </div>
+    </div>
+  </div>
+</div>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

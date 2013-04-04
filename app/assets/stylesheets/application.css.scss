@@ -11,3 +11,17 @@
  *= require_self
  *= require_tree .
  */
+
+
+@import 'bootstrap';
+
+.navbar .brand {
+	margin-left: 0;
+	background-color: $grayDark;
+	color: $blue;
+	// font-weight: bold;
+
+	.white {
+		color: $white;
+	}
+}

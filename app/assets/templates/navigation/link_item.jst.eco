@@ -1,0 +1,1 @@
+<a href="<%= @link_attributes.path %>" <%= @link_attributes.attributes %>><%= @text %></a>

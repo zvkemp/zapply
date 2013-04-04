@@ -1,9 +1,11 @@
-window.ZapplyLite =
+window.Zapply =
   Models: {}
   Collections: {}
-  Views: {}
+  Views:
+    Navigation: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
-
-$(document).ready ->
-  ZapplyLite.initialize()
+  initialize: -> 
+    @session = new Zapply.Models.Session
+    @session.fetch()
+    new Zapply.Routers.Base()
+    Backbone.history.start()

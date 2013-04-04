@@ -2,6 +2,7 @@ require_relative "../minitest_helper"
 
 describe "The landing page :: integration" do
   before do
+    use_javascript
     visit root_path
   end
 

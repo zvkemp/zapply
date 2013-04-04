@@ -2,6 +2,7 @@ require_relative "../minitest_helper"
 
 describe "signing up :: integration" do
   before do
+    use_javascript
     visit root_path
   end
 
@@ -32,6 +33,11 @@ describe "signing up :: integration" do
     fill_in "Password", with: 'password'
     click_on 'Sign in'
     page.text.must_include "Signed in successfully"
+  end
+
+  it "displays the logged in user's email address" do
+    login
+    page.text.must_include @user.email
   end
 
   describe "user is already logged in" do
