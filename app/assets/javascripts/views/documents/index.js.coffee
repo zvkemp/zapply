@@ -8,15 +8,17 @@ class Zapply.Views.Documents.Index extends Backbone.View
   initialize: ->
     @collection.fetch()
     @listenTo(@collection, 'add', @renderDocument)
+    @listenTo(@collection, 'remove', @noDocumentsMessage)
     @listenTo(Zapply.session, 'change', @render)
 
   render: ->
     @$el.html(@logged_in(@template))
-    @noDocumentsMessage() if @collection.length is 0
+    @noDocumentsMessage()
     @
 
   noDocumentsMessage: ->
-    @$('#documents_table').append('<tr class="nodocs"><td>You have not uploaded any documents.</td></tr>')
+    if @collection.length is 0
+      @$('#documents_table').append('<tr class="nodocs"><td>You have not uploaded any documents.</td></tr>')
 
   renderDocument: (document) =>
     $('.nodocs').remove()
@@ -30,7 +32,6 @@ class Zapply.Views.Documents.Index extends Backbone.View
     event.preventDefault()
     attributes = 
       description: $('#document_description').val()
-
     @collection.create attributes,
       wait: true
       success: -> 

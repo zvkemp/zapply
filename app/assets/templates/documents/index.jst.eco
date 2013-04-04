@@ -4,7 +4,7 @@
   </table>
   <div class="actions">
     <form id="new_document" class="form-inline">
-      <input type="text" id="document_description" placeholder="Description (e.g., 'resume', 'cover letter', etc">
+      <input type="text" class="span4" id="document_description" placeholder="Description (eg, 'resume', 'cover letter', etc)">
       <input type="submit" class="btn btn-success" value="Save">
     </form>
   </div>

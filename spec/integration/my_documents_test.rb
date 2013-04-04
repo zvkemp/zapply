@@ -33,11 +33,27 @@ describe "My Documents :: integration" do
         @user.documents.count.must_equal 1
       end
 
-      it "loads the documents when the page opens" do
-        @user.documents.create!(:description => "resume")
-        visit root_path
-        click_link "My Documents"
-        page.text.must_include "resume"
+      describe "existing files" do
+        before do
+          @user.documents.create!(description: "My Resume")
+          visit root_path
+          click_link "My Documents"
+        end
+
+        it "loads the documents when the page opens" do
+          page.text.must_include "My Resume"
+        end
+
+        it "deletes a file" do
+          click_link 'delete'
+          page.text.wont_include "My Resume"
+        end
+
+        it "deletes from the database" do
+          click_link 'delete'
+          @user.documents.count.must_equal 0
+        end
+
       end
     end
   end

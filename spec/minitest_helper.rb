@@ -12,9 +12,9 @@ require 'capybara/rails'
 require 'database_cleaner'
 require 'active_support/testing/setup_and_teardown'
 
-# Capybara.register_driver :selenium do |app|
-  # Capybara::Selenium::Driver.new(app, browser: :chrome)
-# end
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
 
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist

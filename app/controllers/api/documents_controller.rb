@@ -19,5 +19,8 @@ class Api::DocumentsController < Api::BaseController
   end
 
   def destroy
+    @document = current_user.documents.find(params[:id])
+    @document.destroy
+    respond_with(:api, @document)
   end
 end

@@ -1,3 +1,4 @@
 <th>Description:</th>
 <td><%= @document.get('description') %></td>
 <td><%= Math.random() %></td>
+<td><a href="#" class="btn btn-danger btn-small delete">delete</a></td
