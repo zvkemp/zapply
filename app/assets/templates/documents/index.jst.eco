@@ -5,6 +5,7 @@
   <div class="actions">
     <form id="new_document" class="form-inline">
       <input type="text" class="span4" id="document_description" placeholder="Description (eg, 'resume', 'cover letter', etc)">
+      <input id="document_material" type="file">
       <input type="submit" class="btn btn-success" value="Save">
     </form>
   </div>

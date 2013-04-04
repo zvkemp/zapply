@@ -32,6 +32,7 @@ class Zapply.Views.Documents.Index extends Backbone.View
     event.preventDefault()
     attributes = 
       description: $('#document_description').val()
+      material: $('#document_material').val()
     @collection.create attributes,
       wait: true
       success: -> 
