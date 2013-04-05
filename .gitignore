@@ -13,6 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/application_material
 
-
+.DS_Store*
+.DS_Store
 .chromedriver.log

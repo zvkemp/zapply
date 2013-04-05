@@ -1,0 +1,11 @@
+.modal.hide.fade#modal
+  .modal-header
+    %button.close{ type: "button", :"data-dismiss" => "modal",  :"aria-hidden" => true } &times;
+    %h3 Modal header
+  =form_for @document, html: { multipart: true }, remote: true do |f|
+    .modal-body
+      =f.text_field :description
+      =f.file_field :material
+    .modal-footer
+      %a.btn{ href: "#" } Close
+      =f.submit

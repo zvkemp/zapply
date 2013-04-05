@@ -7,4 +7,6 @@ ZapplyLite::Application.routes.draw do
     resource :session
     resources :documents
   end
+
+  resources :documents, only: [:new, :create]
 end

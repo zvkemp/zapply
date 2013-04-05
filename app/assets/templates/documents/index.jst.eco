@@ -3,10 +3,6 @@
   <table class="table" id="documents_table">
   </table>
   <div class="actions">
-    <form id="new_document" class="form-inline">
-      <input type="text" class="span4" id="document_description" placeholder="Description (eg, 'resume', 'cover letter', etc)">
-      <input id="document_material" type="file">
-      <input type="submit" class="btn btn-success" value="Save">
-    </form>
+    <a href="/documents/new" data-remote="true">new document</a>
   </div>
 </div>
