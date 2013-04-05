@@ -25,8 +25,7 @@ class Zapply.Routers.Base extends Backbone.Router
   # TODO: this creates some issues when the session.json hasn't caught up yet - redirects even when logged in.
 
   documentsIndex: =>
-    documents = new Zapply.Collections.Documents
-    view = new Zapply.Views.Documents.Index(collection: documents)  
+    view = new Zapply.Views.Documents.Index(collection: Zapply.documents)  
     @swap(view)
 
   # documentsNew: =>

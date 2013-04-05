@@ -1,8 +1,5 @@
-alert('created!');
+$('#modal').modal('hide').remove();
 
 <% if remotipart_submitted? %>
-  alert('submitted via remotipart')
-  $('#modal').modal('hide').remove();
-<% else %>
-  alert('submitted via native jquery-ujs')
+  Zapply.documents.fetch();
 <% end %>

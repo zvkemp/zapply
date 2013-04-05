@@ -5,4 +5,9 @@
   <div class="actions">
     <a href="/documents/new" data-remote="true">new document</a>
   </div>
+
+  
+  <div id="modal_container">
+  </div>
+
 </div>
