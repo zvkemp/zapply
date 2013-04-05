@@ -3,7 +3,7 @@ class Zapply.Views.Documents.Index extends Backbone.View
   id: "my_documents"
 
   events:
-    'remove #modal': 'refreshCollection'
+    'submit #new_document': 'disableSubmit'
 
   initialize: ->
     @collection.fetch()
@@ -26,16 +26,19 @@ class Zapply.Views.Documents.Index extends Backbone.View
       @$('#documents_table').append('<tr class="nodocs"><td>You have not uploaded any documents.</td></tr>')
 
   renderDocument: (document) =>
-    console.log 'rendering document'
     $('.nodocs').remove()
     documentView = new Zapply.Views.Documents.TableRow(model: document)
     @$('#documents_table').append(documentView.render().el)
+
+  disableSubmit: ->
+    @$('#document_submit').val('Please wait...')
+    @$('#document_submit').attr('disabled', true)
+
 
   leave: ->
     @remove()
 
   refreshCollection: ->
-    alert 'refreshCollection!'
     @collection.fetch(reset: 'true')
 
   handleError: (entry, response) ->
