@@ -3,6 +3,7 @@ Zapply.ApplicationController = Ember.Controller.extend
   init: ->
     @_super()
     console.log 'ApplicationController init'
-    # @set('session', Zapply.Session.find(1))
-    Zapply.session = Zapply.Session.find(1)
-
+    Zapply.session = 
+      sessionObject: Zapply.Session.find(1)
+      email:    -> Zapply.session.sessionObject.get('email')
+      signedIn: -> Zapply.session.sessionObject.get('signed_in')
