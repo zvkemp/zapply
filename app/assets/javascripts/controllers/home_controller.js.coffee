@@ -1,0 +1,1 @@
+Zapply.HomeController = Ember.Controller.extend()

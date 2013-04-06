@@ -4,7 +4,6 @@ require File.expand_path("../../config/environment", __FILE__)
 
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'eco'
 Dir[Rails.root + "factories/*.rb"].each(&method(:require))
 Dir[Rails.root + "spec/helpers/*.rb"].each(&method(:require))
 

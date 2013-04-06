@@ -19,7 +19,7 @@
 //= require ember
 //= require ember-data
 //= require_self
-//= require zapply_lite
-ZapplyLite = Ember.Application.create();
+//= require zapply
+Zapply = Ember.Application.create();
 
 //= require_tree .

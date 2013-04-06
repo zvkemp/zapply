@@ -1,4 +1,4 @@
-ZapplyLite.Store = DS.Store.extend
-  revision: 4
+Zapply.Store = DS.Store.extend
+  revision: 11
   adapter: DS.RESTAdapter.create()
 
