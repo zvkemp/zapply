@@ -1,4 +1,5 @@
 window.Zapply =
+  shared: {}
   Models: {}
   Collections: {}
   Views:
@@ -8,6 +9,7 @@ window.Zapply =
   initialize: -> 
     @session = new Zapply.Models.Session
     @session.fetch()
+    @documents = new Zapply.Collections.Documents
     new Zapply.Routers.Base()
     Backbone.history.start()
 

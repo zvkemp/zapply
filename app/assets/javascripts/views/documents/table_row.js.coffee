@@ -10,6 +10,7 @@ class Zapply.Views.Documents.TableRow extends Backbone.View
 
   render: ->
     @$el.html(@template(document: @model))
+    @insertLinks()
     @
 
   delete: (event) =>
@@ -18,3 +19,10 @@ class Zapply.Views.Documents.TableRow extends Backbone.View
     @model.destroy()
     @remove()
 
+  insertLinks: =>
+    for text, attributes of @model.get('links')
+      link = "<a class='btn btn-small' "
+      for attribute, value of attributes
+        link += "#{attribute}=\"#{value}\""
+      link += ">#{text}</a></li>"
+      @$('.document-actions').append(link)
