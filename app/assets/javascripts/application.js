@@ -15,12 +15,11 @@
 //= require jquery.remotipart
 //= require bootstrap-alert
 //= require bootstrap-modal
-//= require underscore
-//= require backbone
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
 //= require zapply_lite
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
+ZapplyLite = Ember.Application.create();
+
 //= require_tree .

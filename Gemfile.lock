@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/emberjs/ember-rails.git
+  revision: 4dc902b4e1c5a1a6dadc97cc12524df3d7591fac
+  specs:
+    ember-rails (0.11.1)
+      active_model_serializers
+      barber (>= 0.4.1)
+      ember-data-source
+      ember-source
+      execjs (>= 1.2)
+      railties (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -14,6 +26,8 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
+    active_model_serializers (0.7.0)
+      activemodel (>= 3.0)
     activemodel (3.2.12)
       activesupport (= 3.2.12)
       builder (~> 3.0.0)
@@ -29,11 +43,10 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
-    backbone-on-rails (1.0.0.0)
-      eco
-      ejs
-      jquery-rails
-      rails (>= 3.1)
+    barber (0.4.2)
+      ember-source
+      execjs
+      handlebars-source
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.3.1.0)
       sass (~> 3.2)
@@ -64,12 +77,10 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
-    eco (1.0.0)
-      coffee-script
-      eco-source
-      execjs
-    eco-source (1.1.0.rc.1)
-    ejs (1.1.1)
+    ember-data-source (0.0.5)
+      ember-source
+    ember-source (0.0.4)
+      handlebars-source (>= 1.0.0.rc3, < 1.0.0.rc4)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -88,6 +99,7 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
+    handlebars-source (1.0.0.rc3)
     hike (1.2.1)
     http_parser.rb (0.5.3)
     i18n (0.6.4)
@@ -180,16 +192,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  backbone-on-rails
   bootstrap-sass (~> 2.3.1.0)
   capybara
   carrierwave
   coffee-rails (~> 3.2.1)
   database_cleaner
   devise
+  ember-rails!
   factory_girl
   faker
   haml-rails
+  handlebars-source (= 1.0.0.rc3)
   jquery-rails
   minitest
   poltergeist

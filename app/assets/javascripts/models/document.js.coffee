@@ -1,1 +1,0 @@
-class Zapply.Models.Document extends Backbone.Model

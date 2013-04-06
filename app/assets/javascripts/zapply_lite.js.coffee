@@ -1,20 +1,9 @@
-window.Zapply =
-  shared: {}
-  Models: {}
-  Collections: {}
-  Views:
-    Navigation: {}
-    Documents: {}
-  Routers: {}
-  initialize: -> 
-    @session = new Zapply.Models.Session
-    @session.fetch()
-    @documents = new Zapply.Collections.Documents
-    new Zapply.Routers.Base()
-    Backbone.history.start()
-
-  session_links: ->
-    @session.attributes.session_links
-
-  session_link: (name) ->
-    @session_links()[name]
+#= require ./store
+#= require_tree ./models
+#= require_tree ./controllers
+#= require_tree ./views
+#= require_tree ./helpers
+#= require_tree ./templates
+#= require_tree ./routes
+#= require ./router
+#= require_self

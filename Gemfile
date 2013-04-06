@@ -28,7 +28,11 @@ end
 
 gem 'jquery-rails'
 
-gem 'backbone-on-rails'
+# gem 'backbone-on-rails'
+gem 'handlebars-source', '1.0.0.rc3'
+gem 'ember-rails', :git => 'git://github.com/emberjs/ember-rails.git'
+
+
 gem 'devise'
 
 group :test, :development do
