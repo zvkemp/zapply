@@ -1,8 +1,8 @@
-object @user
+object @session => :session
 attributes :email
-if @user.is_a? User
+if @session.is_a? User
   node(:logged_in) { true }
-  node(:session_links) do 
+  node(:links) do 
     { 
       'My Documents' => { 'href' => '#my_documents' },
       'sign out' => {
