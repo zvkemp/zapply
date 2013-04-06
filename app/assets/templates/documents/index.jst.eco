@@ -1,4 +1,4 @@
-<p>Upload your application documents one at a time.</p>
+<p>Upload your application documents one at a time. You may verify the upload by clicking the 'download' button next to the file description.</p>
 <div id="documents" class="well">
   <table class="table" id="documents_table">
   </table>
@@ -6,7 +6,7 @@
     <a href="/documents/new" data-remote="true">new document</a>
   </div>
 
-  
+
   <div id="modal_container">
   </div>
 

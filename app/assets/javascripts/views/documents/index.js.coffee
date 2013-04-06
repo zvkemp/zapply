@@ -31,10 +31,9 @@ class Zapply.Views.Documents.Index extends Backbone.View
     @$('#documents_table').append(documentView.render().el)
 
   disableSubmit: ->
-    @$('#document_submit').val('Please wait...')
     @$('#document_submit').attr('disabled', true)
-
-
+    @$('#document_submit').val('Please wait...')
+    
   leave: ->
     @remove()
 

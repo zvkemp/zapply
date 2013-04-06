@@ -5,8 +5,11 @@
   =form_for @document, html: { multipart: true, style: "margin-bottom: 0;" }, remote: true do |f|
     .modal-body
       .field
-        =f.text_field :description, placeholder: "Description (eg, 'resume', 'cover letter', etc)", :class => "span4"
+        =f.label :description, "Description (e.g., 'resume', 'cover letter', etc)"
+        =f.text_field :description, :class => "span4"
+        %br/
       .field
+        =f.label :material, "Attachment"
         =f.file_field :material
     .modal-footer
-      =f.submit nil, :class => "btn btn-success", :id => "document_submit"
+      =f.submit "Upload", :class => "btn btn-success", :id => "document_submit"
