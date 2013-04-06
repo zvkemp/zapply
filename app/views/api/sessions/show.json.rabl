@@ -1,19 +1,16 @@
 object @session => :session
 attributes :email
 if @session.is_a? User
-  node(:logged_in) { true }
+  node(:signed_in) { true }
   node(:links) do 
-    { 
-      'My Documents' => { 'href' => '#my_documents' },
-      'sign out' => {
-        'href'        => destroy_user_session_path,
-        'data-method' => 'delete', 
-        'rel'         => 'nofollow'
-      }
-    }
+    [{ text: 'My Documents',  href: '#my_documents' },
+     { text: 'sign out', href: destroy_user_session_path,
+        :'data-method' => 'delete', 
+        :rel         => 'nofollow'}
+    ]
   end
 else
-  node(:logged_in) { false }
+  node(:signed_in) { false }
   node(:session_links) do 
     { 
       'sign up' => { href: new_user_registration_path }, 
