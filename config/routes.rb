@@ -4,7 +4,7 @@ ZapplyLite::Application.routes.draw do
   root to: 'home#index'
 
   namespace :api do
-    resource :session
+    resources :sessions
     resources :documents
   end
 
