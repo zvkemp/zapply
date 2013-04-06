@@ -29,6 +29,7 @@ describe "My Documents :: integration" do
       end
 
       it "Uploads the file to the database" do
+        click_link "new document"
         fill_in "document_description", with: "resume"
         click_on "Upload"
         @user.documents.count.must_equal 1
