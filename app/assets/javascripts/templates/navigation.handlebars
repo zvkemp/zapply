@@ -1,3 +1,4 @@
-<li><a href="#">hello</a></li>
-<li><a href="#">world</a></li>
-<li><a href="/users/sign_out" data-method="delete" rel="nofollow">sign out</a></li>
+<li><a href="#">{{session.email}}</a></li>
+{{#if session.signed_in }}
+  <li><a href="/users/sign_out" data-method="delete" rel="nofollow">sign out</a></li>
+{{/if}}

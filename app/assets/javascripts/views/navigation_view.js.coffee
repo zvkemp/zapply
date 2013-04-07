@@ -3,3 +3,9 @@ Zapply.NavigationView = Ember.View.extend
   name: 'navigation'
   tagName: 'ul'
   classNames: ['nav']
+
+  email: 'navView email'
+
+  propEmail: ( ->
+    'propEmail'
+  ).property()
