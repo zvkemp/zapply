@@ -9,4 +9,5 @@ Zapply.DocumentsController = Ember.ArrayController.extend
     # @get('store').commit()
 
   addDocument: ->
-    @get('content').find()
+    console.log 'addDocument fired'
+    Zapply.Document.find()
