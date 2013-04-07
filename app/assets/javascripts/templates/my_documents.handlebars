@@ -1,13 +1,13 @@
 {{#if session.signed_in}}
-  
+<div class="row">
   <h1>My Documents</h1>
-
-  {{view Zapply.NewDocumentView}}
+</div>
   <div class="row">
     <div class="well">
       Upload your application materials one at a time.
-      {{view Zapply.DocumentsTable}}
+      {{view Zapply.NewDocumentView}}
     </div>
+    {{view Zapply.DocumentsTable}}
   </div>
 
 {{else}}

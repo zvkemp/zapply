@@ -4,4 +4,6 @@ class Document < ActiveRecord::Base
 
   mount_uploader :material, MaterialUploader
   attr_accessible :material
+
+  validates_presence_of :description
 end

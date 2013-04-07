@@ -11,8 +11,11 @@ class Api::DocumentsController < Api::BaseController
 
   def create
     @document = current_user.documents.new(params[:document])
-    @document.save
-    respond_with(:api, @document)
+    if @document.save
+      render :show
+    else
+      respond_with(:api, @document)
+    end
   end
 
   def update
