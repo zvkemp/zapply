@@ -27,8 +27,11 @@ Zapply.NewDocumentView = Ember.View.extend
     $('.new_document').fileupload
       dataType: "json"
       progressall: (e, data) ->
+        $('#progress').show()
         progress = parseInt(data.loaded / data.total * 100, 10)
         $('#progress .bar').css('width', progress + '%')
+        if progress == 100
+          $('#progress').hide()
       done: (e, data) ->
         resultId = data.result.document.id
         Zapply.Document.find(resultId)
