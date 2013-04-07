@@ -16,10 +16,17 @@ Capybara.register_driver :selenium do |app|
 end
 
 require 'capybara/poltergeist'
-Capybara.javascript_driver = :poltergeist
+
+poltergeist_log = File.open(Rails.root + 'log/poltergeist.log', 'at' )
+phantom_js_log = File.open(Rails.root + 'log/phantom_js.log', 'at' )
+
+Capybara.register_driver :logging_poltergeist do |app|
+  c = Capybara::Poltergeist::Driver.new(app, { logger: poltergeist_log, phantomjs_logger: phantom_js_log, debug: false })
+end
+Capybara.javascript_driver = :logging_poltergeist
 
 Capybara.default_selector = :css
-Capybara.default_wait_time = 3
+Capybara.default_wait_time = 1
 
 DatabaseCleaner.strategy = :truncation
 

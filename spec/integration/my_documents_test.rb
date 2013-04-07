@@ -12,11 +12,11 @@ describe "My Documents :: integration" do
     end
 
     it "shows an empty list of documents from the user" do
-      find('#my_documents').text.must_include "You have not uploaded any documents."
+      page.text.must_include "You have not uploaded any documents"
     end
 
     it "has instructions" do
-      page.text.must_include "Upload your application documents one at a time."
+      page.text.must_include "Upload your application materials one at a time."
     end
 
     describe "uploading a file" do

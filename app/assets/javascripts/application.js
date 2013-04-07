@@ -20,6 +20,8 @@
 //= require ember-data
 //= require_self
 //= require zapply
-Zapply = Ember.Application.create();
 
-//= require_tree .
+Zapply = Ember.Application.create({
+  rootElement: '#ember-app',
+  LOG_TRANSITIONS: true
+});

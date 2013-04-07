@@ -43,6 +43,6 @@ group :test do
   gem 'minitest'
   gem 'capybara'
   gem 'factory_girl'
-  gem 'poltergeist'
+  gem 'poltergeist', '~> 1.1.0'
   gem 'database_cleaner'
 end

@@ -1,4 +1,9 @@
-<li><a href="#">{{session.email}}</a></li>
 {{#if session.signed_in }}
+  <li><a href="#">{{session.email}}</a></li>
+  <li>{{#linkTo documents}}My Documents{{/linkTo}}</li>
   <li><a href="/users/sign_out" data-method="delete" rel="nofollow">sign out</a></li>
+{{else}}
+  <li><a href="/users/sign_up">sign up</a></li>
+  <li><a href="/users/sign_in">sign in</a></li>
 {{/if}}
+  

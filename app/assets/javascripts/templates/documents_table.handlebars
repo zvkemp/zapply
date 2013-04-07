@@ -1,0 +1,14 @@
+<h3>documents ({{length}})</h3>
+{{#unless length}}
+  <div class="alert info"> You have not uploaded any documents! </div>
+{{/unless}}
+
+<table class="table" id="my_documents">
+  {{#each controller}}
+    <tr>
+      <td>{{description}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<a href="#">new document</a>
