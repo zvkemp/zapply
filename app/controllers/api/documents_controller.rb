@@ -1,6 +1,6 @@
 class Api::DocumentsController < Api::BaseController
   def index
-    @documents = current_user.documents
+    @documents = (current_user || GuestUser.new).documents
     respond_with @documents
   end
 

@@ -1,11 +1,15 @@
-<h1>My Documents</h1>
+{{#if session.signed_in}}
+  
+  <h1>My Documents</h1>
 
-{{view Zapply.NewDocumentView}}
-<div class="row">
-  <div class="well">
-    Upload your application materials one at a time.
-
-    {{view Zapply.DocumentsTable}}
+  {{view Zapply.NewDocumentView}}
+  <div class="row">
+    <div class="well">
+      Upload your application materials one at a time.
+      {{view Zapply.DocumentsTable}}
+    </div>
   </div>
 
-</div>
+{{else}}
+  {{render job_description}}
+{{/if}}

@@ -21,16 +21,18 @@ describe "My Documents :: integration" do
 
     describe "uploading a file" do
       it "adds the document to the collection" do
-        click_link "new document"
-        fill_in "document_description", with: "resume"
+        # click_link "new document"
+        # fill_in "document_description", with: "resume"
+        find(:css, "input.document_description").set("resume")
         click_on "Upload"
         page.text.must_include "resume"
         page.text.wont_include "You have not uploaded any documents"
       end
 
       it "Uploads the file to the database" do
-        click_link "new document"
-        fill_in "document_description", with: "resume"
+        # click_link "new document"
+        # fill_in "document_description", with: "resume"
+        find(:css, "input.document_description").set("resume")
         click_on "Upload"
         @user.documents.count.must_equal 1
       end

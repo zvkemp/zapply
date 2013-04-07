@@ -10,11 +10,5 @@ Zapply.HomeRoute = Ember.Route.extend
 Zapply.DocumentsRoute = Ember.Route.extend
   model: -> Zapply.Document.find()
 
-  setupController: (controller, model) ->
-    controller.set('content', model)
-    console.log controller
-    console.log controller.get('length')
-    console.log controller.get('lengthIsZero')
-
   renderTemplate: ->
     @render('my_documents')
