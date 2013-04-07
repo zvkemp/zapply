@@ -21,7 +21,7 @@ poltergeist_log = File.open(Rails.root + 'log/poltergeist.log', 'at' )
 phantom_js_log = File.open(Rails.root + 'log/phantom_js.log', 'at' )
 
 Capybara.register_driver :logging_poltergeist do |app|
-  c = Capybara::Poltergeist::Driver.new(app, { logger: poltergeist_log, phantomjs_logger: phantom_js_log, debug: false })
+  c = Capybara::Poltergeist::Driver.new(app, { logger: poltergeist_log, phantomjs_logger: phantom_js_log, debug: false, js_errors: false })
 end
 Capybara.javascript_driver = :logging_poltergeist
 

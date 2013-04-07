@@ -14,8 +14,8 @@ describe "signing up :: integration" do
   it "creates a new user" do
     visit new_user_registration_path
     fill_in 'Email', with: 'zvkemp@gmail.com'
-    fill_in 'Password', with: 'password'
-    fill_in 'Password confirmation', with: 'password'
+    fill_in 'user_password', with: 'password'
+    fill_in 'user_password_confirmation', with: 'password'
     click_on "Sign up"
     page.text.must_include "Welcome! You have signed up successfully."
     page.text.must_include "sign out"

@@ -1,13 +1,19 @@
-<h3>documents ({{length}})</h3>
-{{#unless length}}
+{{#if length}}
+  <div class="alert alert-success"><h4>{{length}} documents uploaded.</h4></div>
+{{else}}
   <div class="alert info"> You have not uploaded any documents! </div>
-{{/unless}}
+{{/if}}
 
 <table class="table" id="my_documents">
   {{#each controller}}
     <tr>
       <td>{{description}}</td>
       <td>{{material}}</td>
+      <td class="actions">
+        <div class="btn-group">
+          <a class="btn btn-danger" {{action destroyDocument this}}>delete</a>
+        </div>
+      </td>
     </tr>
   {{/each}}
 </table>

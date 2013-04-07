@@ -1,11 +1,7 @@
 
 <input type="hidden" name="authenticity_token" {{bindAttr value="view.csrf"}}>
-{{! view Ember.TextField valueBinding="view.newDocumentDescription" classNames="document_description span4" placeholder="description (eg 'resume, 'cover letter', etc)"}}
-{{! <input class="span4" id="document_description" name="document[description]" size="30" type="text"> }}
 <input type="file" id="document_material" name="document[material]" multiple="multiple">
-{{! <input type="submit" value="Upload" class="btn btn-success"> }}
 
-
-<div id="progress" class="progress" style="display:none;">
+<div id="progress" class="progress progress-striped" style="display:none;">
   <div class="bar" style="width: 0%;"></div>
 </div>

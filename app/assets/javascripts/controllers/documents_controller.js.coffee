@@ -8,6 +8,9 @@ Zapply.DocumentsController = Ember.ArrayController.extend
     # Zapply.Document.createRecord(description: description)
     # @get('store').commit()
 
-  addDocument: ->
-    console.log 'addDocument fired'
-    Zapply.Document.find()
+  # addDocument: ->
+    # Zapply.Document.find()
+
+  destroyDocument: (document) ->
+    document.deleteRecord()
+    @get('store').commit()
