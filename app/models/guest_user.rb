@@ -3,6 +3,10 @@ class GuestUser
     ""  
   end
 
+  def submitted
+    false
+  end
+  
   def documents
     []
   end

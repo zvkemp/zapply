@@ -14,16 +14,7 @@ Zapply.NewDocumentView = Ember.View.extend
   ).property()
 
 
-  submit: ->
-    # @get('controller').send('addDocument', @get('newDocumentDescription'))
-    console.log 'form submitted'
-  #   @get('controller').send('addDocument')
-  #   # @set('newDocumentDescription', '')
-  #   # false
-
   didInsertElement: ->
-    console.log 'fileupload bound to form'
-    console.log $('.new_document')
     $('.new_document').fileupload
       dataType: "json"
       progressall: (e, data) ->

@@ -1,7 +1,8 @@
 object @session => :session
-attributes :email
+attributes :email, :submitted
 if @session.is_a? User
   node(:signed_in) { true }
+  # node(:application_status) { @session.submitted? ? "Application Submitted" : "Application In Progress" }
   node(:links) do 
     [{ text: 'My Documents',  href: '#my_documents' },
      { text: 'sign out', href: destroy_user_session_path,
