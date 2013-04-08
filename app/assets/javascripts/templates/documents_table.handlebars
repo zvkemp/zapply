@@ -7,15 +7,13 @@
 <table class="table" id="my_documents">
   {{#each controller}}
     <tr>
-      <td>{{description}}</td>
-      <td>{{material}}</td>
-      {{#unless controller.session.submitted}}
-        <td class="actions">
-          <div class="btn-group">
-            <a class="btn btn-danger btn-small" {{action destroyDocument this}}>delete</a>
-          </div>
-        </td>
-      {{/unless}}
+      <td width="75%"><i class="icon-file"></i>&emsp;{{material}}</td>
+      <td class="actions" width="25%">
+        <a {{bindAttr href="download_path"}} class="btn btn-small">download</a>
+        {{#unless controller.session.submitted}}
+          <a class="btn btn-danger btn-small" {{action destroyDocument this}}>delete</a>
+        {{/unless}}
+      </td>
     </tr>
   {{/each}}
 </table>

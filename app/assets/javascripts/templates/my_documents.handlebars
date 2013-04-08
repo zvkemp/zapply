@@ -6,7 +6,19 @@
     <div class="row">
       {{#unless session.submitted }}
         <div class="alert alert-info">
-            Drag your application documents to this window to upload them, or use the file picker below. You can upload multiple files at once if your browser supports it.
+            <p>
+              Drag your application documents to this window to upload them, or use the file picker below. 
+              You can upload multiple files at once if your browser supports it. We prefer documents in <strong>
+              PDF</strong> format, and ideally not more than 4 pages total. We will also accept files in
+              .docx, .doc, or .rtf formats.
+            </p>
+            <p>
+              After you have uploaded your resume, cover letter, and any other material you feel 
+              is necessary to your application, click the <span class="label label-success">Submit Application</span>
+              button. <strong>You will not be able to make changes to your application after you have submitted 
+              it.</strong>
+            </p>
+
             {{view Zapply.NewDocumentView}}
         </div>
       {{/unless}}
