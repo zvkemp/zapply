@@ -51,12 +51,12 @@ describe "My Documents :: integration" do
         end
 
         it "deletes a file" do
-          click_link 'delete'
+          click_on 'delete'
           page.text.wont_include "My Resume"
         end
 
         it "deletes from the database" do
-          click_link 'delete'
+          click_on 'delete'
           @user.documents.count.must_equal 0
         end
 
