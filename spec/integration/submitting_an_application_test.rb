@@ -45,4 +45,16 @@ describe "Submitted an application :: integration" do
       page.text.wont_include "Submit Application"
     end
   end
+
+  describe "with no documents" do
+    it "hides the submit button" do
+      click_link "My Documents"
+      page.wont_include "Submit Application"
+    end
+  end
+
+  # TODO: two-stage submit interface procedure (ie, submit -> confirm submit)
+  # TODO: more instructions
+
+
 end
