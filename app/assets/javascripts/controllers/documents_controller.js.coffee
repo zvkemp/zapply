@@ -1,8 +1,8 @@
 Zapply.DocumentsController = Ember.ArrayController.extend
   
-  lengthIsZero: Ember.computed(->
+  lengthIsZero: (->
     @get('length') == 0 || @get('length') == null
-  ).property('@content')
+  ).property()
 
   # addDocument: (description) ->
     # Zapply.Document.createRecord(description: description)
@@ -14,3 +14,9 @@ Zapply.DocumentsController = Ember.ArrayController.extend
   destroyDocument: (document) ->
     document.deleteRecord()
     @get('store').commit()
+
+  submitApplication: ->
+    session = @get('session').get('content')
+    session.set("submitted", true)
+    @get('store').commit()
+    console.log "submitted: ", session.get('submitted')

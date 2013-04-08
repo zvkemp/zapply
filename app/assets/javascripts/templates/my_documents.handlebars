@@ -1,16 +1,25 @@
 {{#if session.signed_in}}
-<div class="row">
-  <h1>My Documents</h1>
-</div>
   <div class="row">
-    <div class="alert alert-info">
-      Drag your application documents to this window to upload them, or use the file picker below. You can upload multiple files at once if your browser supports it.
-
-      {{view Zapply.NewDocumentView}}
-    </div>
-    {{view Zapply.DocumentsTable}}
+    <h1>My Documents</h1>
   </div>
 
+    <div class="row">
+      {{#unless session.submitted }}
+        <div class="alert alert-info">
+            Drag your application documents to this window to upload them, or use the file picker below. You can upload multiple files at once if your browser supports it.
+            {{view Zapply.NewDocumentView}}
+        </div>
+      {{/unless}}
+      {{view Zapply.DocumentsTable}}
+    </div>
+
+    <div class="row">
+      {{#unless session.submitted}}
+        {{#if length}}
+          <a href="#" class="btn btn-large btn-success" {{action submitApplication}}>Submit Application</a>
+        {{/if}}
+      {{/unless}}
+    </div>
 {{else}}
   {{render job_description}}
 {{/if}}

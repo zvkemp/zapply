@@ -9,11 +9,13 @@
     <tr>
       <td>{{description}}</td>
       <td>{{material}}</td>
-      <td class="actions">
-        <div class="btn-group">
-          <a class="btn btn-danger btn-small" {{action destroyDocument this}}>delete</a>
-        </div>
-      </td>
+      {{#unless controller.session.submitted}}
+        <td class="actions">
+          <div class="btn-group">
+            <a class="btn btn-danger btn-small" {{action destroyDocument this}}>delete</a>
+          </div>
+        </td>
+      {{/unless}}
     </tr>
   {{/each}}
 </table>

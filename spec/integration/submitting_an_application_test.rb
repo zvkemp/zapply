@@ -12,7 +12,7 @@ describe "Submitted an application :: integration" do
     end
 
     it "displays the in-progress indicator" do
-      find('navbar').text.must_include "Application In Progress"
+      find('.navbar').text.must_include "Application In Progress"
     end
   end
 
@@ -25,11 +25,11 @@ describe "Submitted an application :: integration" do
     end
 
     it "says thank you" do
-      page.text.must_include "Thank you for your application for the program manager position."
+      page.text.must_include "Your application has been submitted"
     end
 
     it "displays submitted status" do
-      find('navbar').text.must_include "Application Submitted."
+      find('.navbar').text.must_include "Application Submitted"
     end
 
     it "disables document upload" do
