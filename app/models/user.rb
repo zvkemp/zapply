@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
 
   has_many :documents
 
+  def self.applicants
+    where(admin: false)
+  end
+
   def submit!
     update_attributes(submitted: true)
   end

@@ -3,6 +3,12 @@ Zapply.Router.map (match)->
   @route 'home', path: '/'
   @route 'documents', path: '/my_documents'
 
+  @resource('admin', ->
+    @resource('applicants', ->
+      @route 'show'
+    )
+  )
+
 Zapply.HomeRoute = Ember.Route.extend
   renderTemplate: ->
     @render('job_description') # handlebars template
