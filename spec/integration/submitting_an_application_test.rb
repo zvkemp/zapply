@@ -12,7 +12,7 @@ describe "Submitted an application :: integration" do
     end
 
     it "displays the in-progress indicator" do
-      find('.navbar').text.must_include "Application In Progress"
+      find('#navigation').text.must_include "Application In Progress"
     end
   end
 
@@ -29,11 +29,11 @@ describe "Submitted an application :: integration" do
     end
 
     it "displays submitted status" do
-      find('.navbar').text.must_include "Application Submitted"
+      find('#navigation').text.must_include "Application Submitted"
     end
 
     it "disables document upload" do
-      find('.navbar-inner').click_link "My Documents"
+      find('#navigation').click_link "My Documents"
       page.text.must_include "Your application has been submitted."
       page.text.must_include "resume"
       page.text.must_include "cover letter"
@@ -41,15 +41,15 @@ describe "Submitted an application :: integration" do
     end
 
     it "disables application submittal" do
-      find('.navbar-inner').click_link "My Documents"
+      find('#navigation').click_link "My Documents"
       page.text.wont_include "Submit Application"
     end
   end
 
   describe "with no documents" do
     it "hides the submit button" do
-      click_link "My Documents"
-      page.wont_include "Submit Application"
+      find('#navigation').click_link "My Documents"
+      page.text.wont_include "Submit Application"
     end
   end
 

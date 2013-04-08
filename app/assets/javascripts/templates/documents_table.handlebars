@@ -4,10 +4,11 @@
   <div class="alert info"> You have not uploaded any documents! </div>
 {{/if}}
 
-<table class="table" id="my_documents">
+<table class="table table-hover" id="my_documents">
   {{#each controller}}
     <tr>
       <td width="75%"><i class="icon-file"></i>&emsp;{{material}}</td>
+      <td width="75%"><i class="icon-file"></i>&emsp;{{description}}</td>
       <td class="actions" width="25%">
         <a {{bindAttr href="download_path"}} class="btn btn-small">download</a>
         {{#unless controller.session.submitted}}

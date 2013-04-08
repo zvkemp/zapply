@@ -8,7 +8,7 @@ describe "My Documents :: integration" do
   describe "applicants" do
     before do
       login
-      find('.navbar-inner').click_link('My Documents')
+      find('#navigation').click_link('My Documents')
     end
 
     it "shows an empty list of documents from the user" do
@@ -43,7 +43,7 @@ describe "My Documents :: integration" do
         before do
           @user.documents.create!(description: "My Resume")
           visit root_path
-          find('.navbar-inner').click_link "My Documents"
+          find('#navigation').click_link "My Documents"
         end
 
         it "loads the documents when the page opens" do

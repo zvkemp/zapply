@@ -50,7 +50,7 @@ describe "signing up :: integration" do
     end
 
     it "displays a my documents link in the navigation bar" do
-      find('.navbar-inner').text.must_include 'My Documents'
+      find('#navigation').text.must_include 'My Documents'
     end
 
     it "doesn't display the sign-in link" do
