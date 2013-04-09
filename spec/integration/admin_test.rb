@@ -12,6 +12,19 @@ describe "Admin functions :: integration" do
 
 
   it "shows the admin link in the navbar" do
-    page.text.must_include "admin"
+    page.text.must_include "ADMIN"
+  end
+
+  describe "list of applicants" do
+    before do
+      FactoryGirl.create(:user, email: "zvaughank@gmail.com", submitted: true)
+      FactoryGirl.create(:user, email: "zach@wolfbrown.com", submitted: true)
+    end
+
+    it "lists the applicants" do
+      click_link 'ADMIN'
+      page.text.must_include 'zvaughank'
+      page.text.must_include 'zvkemp'
+    end
   end
 end

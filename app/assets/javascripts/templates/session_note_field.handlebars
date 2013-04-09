@@ -2,7 +2,7 @@
 {{#if session.submitted}}
   <p>{{session.note}}</p>
 {{else}}
-  {{view Ember.TextArea valueBinding="session.note" class="span8" rows="6" }}
+  {{view Ember.TextArea valueBinding="session.note" class="span8 submit_note" rows="6" }}
   <br />
   {{#if session.isDirty}}
     <a href="#" class="btn btn-warning" {{action commitData}}>save notes</a>
