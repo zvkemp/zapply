@@ -18,6 +18,7 @@
 
 body {
 	padding-top: 70px;
+	padding-bottom: 140px;
 	font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 .navbar .brand {
@@ -26,14 +27,10 @@ body {
 	color: $blue;
 	// font-weight: bold;
 
-	.white {
-		color: $white;
-	}
+	.white { color: $white; }
 }
 
-.nav > li > span.label {
-	margin: 10px 15px 10px;
-}
+.nav > li > span.label { margin: 10px 15px 10px; }
 
 h1,h2,h3 { font-weight: 300 }
 
@@ -41,35 +38,14 @@ h1,h2,h3 { font-weight: 300 }
 	@include gradient-directional(#aaa, #777, 45deg);
 	text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
 	color: #fafafa;
-	h1 { 
-		font-weight: 300; 
-	}
-
-	h3 {
-		font-weight: 400;
-	}
-
-	p { 
-		font-weight: 400;
-		font-size: 14pt;
-	}
-
-	font-weight: 300;
+	h1 {font-weight: 200; }
+ 	h3 {font-weight: 400; }
+ 	p {font-weight: 400; font-size: 14pt; }
+ 	font-weight: 300;
 	font-size: 16pt;
-
-	#actions .btn {
-		padding-left: 50px;
-		padding-right: 50px;
-	}
+ 	#actions .btn {padding-left: 50px; padding-right: 50px; }
 }
 
-h2 { font-weight: 200; }
+h2 { font-weight: 200; color: #888;}
 
-ul {
-	list-style-type: square;
-}
-
-// #job_description {
-	// h2 { margin-top: 50px; }
-// }
-
+ul {list-style-type: square; }

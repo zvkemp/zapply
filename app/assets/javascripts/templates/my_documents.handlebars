@@ -6,6 +6,7 @@
   <div class="row">
     {{#unless session.submitted }}
       <div class="alert alert-info">
+          <h3>Drag and drop your resume and cover letter here.</h3>
           <p>
             Drag your application documents to this window to upload them, or use the file picker below. 
             You can upload multiple files at once if your browser supports it. We prefer documents in <strong>
@@ -15,25 +16,28 @@
           <p>
             After you have uploaded your resume, cover letter, and any other material you feel 
             is necessary to your application, click the <span class="label label-success">Submit Application</span>
-            button. <strong>You will not be able to make changes to your application after you have submitted 
-            it.</strong>
+            button. <strong>You will not be able to make changes to your application after you have submitted it.</strong>
           </p>
 
           {{view Zapply.NewDocumentView}}
       </div>
     {{/unless}}
     {{view Zapply.DocumentsTable}}
+    {{view Zapply.SessionNoteField}}
   </div>
     <br/>
   <div class="row">
     {{#unless session.submitted}}
       {{#if length}}
         <div class="well well-small pagination-centered">
-          <a href="#" class="btn btn-large btn-success span7" style="float: none;" {{action submitApplication}}><i class="icon-ok icon-white"></i> Submit Application</a>
+          <a href="#" class="btn btn-large btn-success span7" style="float: none;" {{action openModalSubmit}}>Submit Application...</a>
         </div>
       {{/if}}
     {{/unless}}
   </div>
+
+  {{view Zapply.SubmitApplicationView}}
+
 {{else}}
   {{render job_description}}
 {{/if}}

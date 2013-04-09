@@ -53,6 +53,17 @@ describe "Submitted an application :: integration" do
     end
   end
 
+  describe "submitting an application" do
+    before do
+      @user.documents.create(description: "resume")
+      @user.documents.create(description: "cover letter")
+      visit root_path
+      find('#navigation').click_link('My Documents')
+    end
+
+    
+  end
+
   # TODO: two-stage submit interface procedure (ie, submit -> confirm submit)
   # TODO: more instructions
 

@@ -2,6 +2,7 @@ object @session => :session
 attributes :email, :submitted
 node(:id) { 1 }
 if @session.is_a? User
+  node(:note){ |u| u.note }
   node(:signed_in) { true }
   # node(:application_status) { @session.submitted? ? "Application Submitted" : "Application In Progress" }
   node(:links) do 
