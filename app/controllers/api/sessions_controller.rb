@@ -1,14 +1,24 @@
 class Api::SessionsController < Api::BaseController
+  before_filter :user_has_not_yet_submitted, only: [:update]
+
+
   def show
     respond_with(@session = (current_user || GuestUser.new))
   end 
 
-  def update #submitted only
-    puts params.inspect
-    @session     = current_user
+  def update #submitted only ( and note)
     submitted = params[:session][:submitted]
-    @session.update_attributes(submitted: submitted) if submitted 
-    # respond_with(@session)
+    note      = params[:session][:note]
+    @session.update_attributes(submitted: submitted, note: note)
     render :show
   end
+
+  private
+
+    def user_has_not_yet_submitted
+      @session = current_user
+      if @session.submitted?
+        redirect_to root_path and return false
+      end
+    end
 end

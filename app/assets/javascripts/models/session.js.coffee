@@ -3,3 +3,4 @@ Zapply.Session = DS.Model.extend
   signed_in: DS.attr('boolean')
   submitted: DS.attr('boolean')
   admin: DS.attr('boolean')
+  note: DS.attr('string')

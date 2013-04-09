@@ -28,7 +28,16 @@ Zapply.DocumentsController = Ember.ArrayController.extend
       @get('store').commit()
 
   submitApplication: ->
-    if confirm("Once you submit your application, it will be transmitted to WolfBrown and you will no longer be able to edit it. Are you sure you want to proceed?")
-      session = @get('session').get('content')
-      session.set("submitted", true)
-      @get('store').commit()
+    session = @get('session').get('content')
+    session.set("submitted", true)
+    @commitData()
+    @closeModalSubmit()
+
+  commitData: ->
+    @get('store').commit()
+
+  openModalSubmit: ->
+    $('#modal_submit').modal('toggle')
+
+  closeModalSubmit: ->
+    $('#modal_submit').modal('hide')
