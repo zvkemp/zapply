@@ -1,7 +1,7 @@
 Zapply.Router.map (match)->
   # match('/').to('index')
   @route 'home', path: '/'
-  @route 'documents', path: '/my_documents'
+  @route 'documents', path: '/my_application'
 
 Zapply.HomeRoute = Ember.Route.extend
   renderTemplate: ->
