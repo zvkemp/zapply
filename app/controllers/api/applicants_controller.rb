@@ -1,4 +1,4 @@
-class Api::Admin::ApplicantsController < Api::Admin::BaseController
+class Api::ApplicantsController < Api::AdminController
 
   def index
     respond_with(@applicants = User.applicants)
