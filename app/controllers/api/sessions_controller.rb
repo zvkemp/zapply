@@ -9,7 +9,8 @@ class Api::SessionsController < Api::BaseController
   def update #submitted only ( and note)
     submitted = params[:session][:submitted]
     note      = params[:session][:note]
-    @session.update_attributes(submitted: submitted, note: note)
+    name      = params[:session][:name]
+    @session.update_attributes(submitted: submitted, note: note, name: name)
     render :show
   end
 

@@ -2,9 +2,14 @@
 {{#if session.submitted}}
   <p>{{session.note}}</p>
 {{else}}
-  {{view Ember.TextArea valueBinding="session.note" class="span8" rows="6" }}
-  <br />
-  {{#if session.isDirty}}
-    <a href="#" class="btn btn-warning" {{action commitData}}>save notes</a>
-  {{/if}}
+
+  <div class="control-group" {{bindAttr class="session.isDirty:warning"}}>
+    <div class="controls">
+      {{view Ember.TextArea valueBinding="session.note" class="span8" rows="6" }}
+      <br />
+      {{#if session.isDirty}}
+        <a href="#" class="btn btn-warning" {{action commitData}}>save changes</a>
+      {{/if}}
+    </div>
+  </div>
 {{/if}}

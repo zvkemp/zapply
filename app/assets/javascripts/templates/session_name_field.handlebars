@@ -1,0 +1,13 @@
+{{#if session.submitted}}
+  <h3>{{session.name}}</h3>
+{{else}}
+  <div class="control-group" {{bindAttr class="session.isDirty:warning"}}>
+    <div class="controls input-prepend" {{bindAttr class="session.isDirty:input-append"}}>
+      <span class="add-on">name</span>
+      {{view Ember.TextField valueBinding="session.name" class="input-xlarge"}}
+      {{#if session.isDirty}}
+        <button class="btn btn-warning" type="button" {{action commitData}}>save changes</button>
+      {{/if}}
+    </div>
+  </div>
+{{/if}}
