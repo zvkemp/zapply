@@ -1,3 +1,5 @@
+HOSTS_CONFIG = YAML.load_file("#{Rails.root.to_s}/config/hosts_config.yml")[Rails.env]
+
 ZapplyLite::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -65,4 +67,15 @@ ZapplyLite::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.ember.variant = :production
+
+  config.action_mailer.default_url_options = { HOSTS_CONFIG['host'] => 'impactmanager.wolfbrown.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    HOSTS_CONFIG['address'] => "smtp.ihostexchange.net",
+    HOSTS_CONFIG['enable_starttles_auto'] => true,
+    HOSTS_CONFIG['port'] => 587,
+    HOSTS_CONFIG['authentication'] => :login,
+    HOSTS_CONFIG['user_name'] => "zach@wolfbrown.com",
+    HOSTS_CONFIG['password'] => "a container of gerbils"
+  }
 end

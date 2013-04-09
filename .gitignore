@@ -19,3 +19,5 @@
 .DS_Store*
 .DS_Store
 .chromedriver.log
+
+config/hosts_config.yml
