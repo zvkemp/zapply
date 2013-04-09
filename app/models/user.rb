@@ -6,9 +6,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :submitted, :note, :name
   # attr_accessible :title, :body
 
   has_many :documents
+
+  def submit!
+    update_attributes(submitted: true)
+  end
 
 end

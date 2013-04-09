@@ -4,4 +4,12 @@ class Document < ActiveRecord::Base
 
   mount_uploader :material, MaterialUploader
   attr_accessible :material
+
+  # before_create :default_description
+
+  # def default_description
+    # self.description = "new file" if description.blank?
+  # end
+
+  # validates_presence_of :description
 end

@@ -11,6 +11,7 @@ gem 'thin'
 gem 'rabl'
 
 gem 'carrierwave'
+gem 'remotipart'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,11 +24,16 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass', '~> 2.3.1.0'
+  gem 'jquery-fileupload-rails'
 end
 
 gem 'jquery-rails'
 
-gem 'backbone-on-rails'
+# gem 'backbone-on-rails'
+gem 'handlebars-source', '1.0.0.rc3'
+gem 'ember-rails', :git => 'git://github.com/emberjs/ember-rails.git'
+
+
 gem 'devise'
 
 group :test, :development do
@@ -38,6 +44,6 @@ group :test do
   gem 'minitest'
   gem 'capybara'
   gem 'factory_girl'
-  gem 'poltergeist'
+  gem 'poltergeist', '~> 1.1.0'
   gem 'database_cleaner'
 end

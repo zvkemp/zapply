@@ -1,6 +1,6 @@
 require_relative "../minitest_helper"
 
-describe "My Documents :: integration" do
+describe "My Application :: integration" do
   before do
     use_javascript
   end
@@ -8,28 +8,34 @@ describe "My Documents :: integration" do
   describe "applicants" do
     before do
       login
-      find('.navbar-inner').click_link('My Documents')
+      find('#navigation').click_link('My Application')
     end
 
     it "shows an empty list of documents from the user" do
-      find('#my_documents').text.must_include "You have not uploaded any documents."
+      page.text.must_include "You have not uploaded any documents"
     end
 
     it "has instructions" do
-      page.text.must_include "Upload your application documents one at a time."
+      page.text.must_include "Drag your application documents to this window to upload them, or use the file picker below"
     end
 
     describe "uploading a file" do
       it "adds the document to the collection" do
-        fill_in "document_description", with: "resume"
-        click_on "Save"
+        skip "needs update for new file upload"
+        # click_link "new document"
+        # fill_in "document_description", with: "resume"
+        find(:css, "input.document_description").set("resume")
+        click_on "Upload"
         page.text.must_include "resume"
         page.text.wont_include "You have not uploaded any documents"
       end
 
-      it "saves the file to the database" do
-        fill_in "document_description", with: "resume"
-        click_on "Save"
+      it "Uploads the file to the database" do
+        skip "needs update for new file upload"
+        # click_link "new document"
+        # fill_in "document_description", with: "resume"
+        find(:css, "input.document_description").set("resume")
+        click_on "Upload"
         @user.documents.count.must_equal 1
       end
 
@@ -37,7 +43,7 @@ describe "My Documents :: integration" do
         before do
           @user.documents.create!(description: "My Resume")
           visit root_path
-          click_link "My Documents"
+          find('#navigation').click_link "My Application"
         end
 
         it "loads the documents when the page opens" do
@@ -45,12 +51,12 @@ describe "My Documents :: integration" do
         end
 
         it "deletes a file" do
-          click_link 'delete'
+          click_on 'delete'
           page.text.wont_include "My Resume"
         end
 
         it "deletes from the database" do
-          click_link 'delete'
+          click_on 'delete'
           @user.documents.count.must_equal 0
         end
 

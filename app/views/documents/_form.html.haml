@@ -1,0 +1,15 @@
+.modal.hide.fade#modal
+  .modal-header
+    %button.close{ type: "button", :"data-dismiss" => "modal",  :"aria-hidden" => true } &times;
+    %h3 New Document
+  =form_for @document, html: { multipart: true, style: "margin-bottom: 0;" }, remote: true do |f|
+    .modal-body
+      .field
+        =f.label :description, "Description (e.g., 'resume', 'cover letter', etc)"
+        =f.text_field :description, :class => "span4"
+        %br/
+      .field
+        =f.label :material, "Attachment"
+        =f.file_field :material
+    .modal-footer
+      =f.submit "Upload", :class => "btn btn-success", :id => "document_submit"

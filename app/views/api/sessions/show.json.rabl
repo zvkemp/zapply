@@ -1,19 +1,20 @@
-object @user
-attributes :email
-if @user.is_a? User
-  node(:logged_in) { true }
-  node(:session_links) do 
-    { 
-      'My Documents' => { 'href' => '#my_documents' },
-      'sign out' => {
-        'href'        => destroy_user_session_path,
-        'data-method' => 'delete', 
-        'rel'         => 'nofollow'
-      }
-    }
+object @session => :session
+attributes :email, :submitted
+node(:id) { 1 }
+if @session.is_a? User
+  node(:note){ |u| u.note }
+  node(:name){ |u| u.name }
+  node(:signed_in) { true }
+  # node(:application_status) { @session.submitted? ? "Application Submitted" : "Application In Progress" }
+  node(:links) do 
+    [{ text: 'My Application',  href: '#my_documents' },
+     { text: 'sign out', href: destroy_user_session_path,
+        :'data-method' => 'delete', 
+        :rel         => 'nofollow'}
+    ]
   end
 else
-  node(:logged_in) { false }
+  node(:signed_in) { false }
   node(:session_links) do 
     { 
       'sign up' => { href: new_user_registration_path }, 

@@ -12,14 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-fileupload/basic
+//= require jquery.remotipart
 //= require bootstrap-alert
 //= require bootstrap-modal
-//= require underscore
-//= require backbone
-//= require zapply_lite
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
-//= require_tree .
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require zapply
+
+Zapply = Ember.Application.create({
+  rootElement: '#ember-app',
+  LOG_TRANSITIONS: true
+});

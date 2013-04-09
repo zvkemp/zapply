@@ -1,0 +1,14 @@
+<div id="modal_submit" class="hide fade modal">
+  <div class="modal-header">
+    <h3>Submit Application</h3>
+  </div>
+
+  <div class="modal-body">
+    {{length}} {{documentString}} will be transmitted to WolfBrown. After you submit your application, you will no longer be able to edit it. Proceed?
+  </div>
+
+  <div class="modal-footer">
+    <a href="#" class="btn" {{action closeModalSubmit}}>Cancel</a>
+    <a href="#" class="btn btn-success" {{action submitApplication}}><i class="icon-ok icon-white"></i> Confirm</a>
+  </div>
+</div>

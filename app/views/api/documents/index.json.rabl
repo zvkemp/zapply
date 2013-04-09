@@ -1,2 +1,2 @@
-collection @documents
+collection @documents, root: :documents, :object_root => false
 extends "api/documents/show"
