@@ -1,0 +1,10 @@
+  <table class="table">
+    
+    {{#each controller}}
+      <tr {{bindAttr class="submitted:info" }}>
+        <td>{{email}}</td>
+        <td>{{submitted}}</td>
+      </tr>
+    {{/each}}
+
+  </table>

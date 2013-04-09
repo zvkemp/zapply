@@ -2,12 +2,8 @@ Zapply.Router.map (match)->
   # match('/').to('index')
   @route 'home', path: '/'
   @route 'documents', path: '/my_documents'
+  @route 'applicants', path: '/applicants'
 
-  @resource('admin', ->
-    @resource('applicants', ->
-      @route 'show'
-    )
-  )
 
 Zapply.HomeRoute = Ember.Route.extend
   renderTemplate: ->
@@ -18,3 +14,6 @@ Zapply.DocumentsRoute = Ember.Route.extend
 
   renderTemplate: ->
     @render('my_documents')
+
+Zapply.ApplicantsRoute = Ember.Route.extend
+  model: -> Zapply.Applicant.find()

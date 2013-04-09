@@ -1,7 +1,7 @@
 {{#if session.signed_in }}
 
   {{#if session.admin}}
-    <li><a href="">ADMIN</a></li>
+    <li>{{#linkTo applicants}}ADMIN{{/linkTo}}</li>
   {{else}}
     {{#if session.submitted }}
       <li><span class="label label-info">Application Submitted</span></li>

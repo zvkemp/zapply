@@ -3,9 +3,9 @@ Zapply.Store = DS.Store.extend
   adapter: DS.RESTAdapter.create
     namespace: 'api'
 
-Zapply.Store.registerAdapter('Zapply.Applicant', DS.RESTAdapter.extend
-  url: 'api/admin'
-)
+# Zapply.Store.registerAdapter('Zapply.Applicant', DS.RESTAdapter.extend
+  # url: 'api/admin'
+# )
 
 # TODO: there is a bug on committing to the store with custom model adapters -
 # may need to ditch the admin api namespace for now and use the general 'api' namespace.
