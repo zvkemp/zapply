@@ -1,7 +1,7 @@
 class Api::ApplicantsController < Api::AdminController
 
   def index
-    respond_with(@applicants = User.applicants)
+    respond_with(@applicants = User.applicants, each_serializer: ApplicantSerializer)
   end
 
   def show
