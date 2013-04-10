@@ -1,3 +1,5 @@
+DS.RESTAdapter.configure('Zapply.Document', sideloadAs: 'documents')
+
 Zapply.Store = DS.Store.extend
   revision: 11
   adapter: DS.RESTAdapter.create

@@ -5,7 +5,7 @@ class Api::ApplicantsController < Api::AdminController
   end
 
   def show
-    respond_with(@applicant = User.applicants.find(params[:id]))
+    respond_with(@applicant = User.applicants.find(params[:id]), serializer: ApplicantSerializer)
   end
 
   def create
