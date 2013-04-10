@@ -17,8 +17,8 @@ describe "signing up :: integration" do
     fill_in 'user_password', with: 'password'
     fill_in 'user_password_confirmation', with: 'password'
     click_on "Sign up"
-    page.text.must_include "Welcome! You have signed up successfully."
-    page.text.must_include "sign out"
+    page.text.must_include "A message with a confirmation link has been sent to your email address"
+    # page.text.must_include "sign out"
   end
 
   it "displays a logout link for signed-in users" do

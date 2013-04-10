@@ -11,7 +11,7 @@ class Api::SessionsController < Api::BaseController
     note      = params[:session][:note]
     name      = params[:session][:name]
     @session.update_attributes(submitted: submitted, note: note, name: name)
-    render :show
+    respond_with(@session, serializer: SessionSerializer)
   end
 
   private

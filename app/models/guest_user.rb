@@ -1,4 +1,10 @@
 class GuestUser
+  include ActiveModel::Serialization
+  
+  def id
+    0
+  end
+
   def email
     ""  
   end
@@ -9,5 +15,13 @@ class GuestUser
   
   def documents
     []
+  end
+
+  def admin 
+    false
+  end
+
+  def note
+    ""
   end
 end
