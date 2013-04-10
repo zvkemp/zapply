@@ -1,2 +1,9 @@
-<h1>{{name}}</h1>
-<h3>{{email}}</h3>
+<h1>{{content.name}}</h1>
+<h3>{{content.email}}</h3>
+
+
+{{#if isLoaded}}
+  <ul>
+    <li>docs here</li>
+  </ul>
+{{/if}}

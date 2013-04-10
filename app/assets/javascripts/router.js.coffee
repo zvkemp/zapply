@@ -26,3 +26,6 @@ Zapply.ApplicantsRoute = Ember.Route.extend
 
 Zapply.ApplicantRoute = Ember.Route.extend
   model: (params) -> Zapply.Applicant.find(params.applicant_id)
+  setupController: (controller, applicant)->
+    window.a = controller.get('content')
+
