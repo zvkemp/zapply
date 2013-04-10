@@ -3,7 +3,7 @@ class Api::SessionsController < Api::BaseController
 
 
   def show
-    respond_with(@session = (current_user || GuestUser.new))
+    respond_with(@session = (current_user || GuestUser.new), serializer: SessionSerializer)
   end 
 
   def update #submitted only ( and note)
