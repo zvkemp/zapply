@@ -1,6 +1,6 @@
 require_relative "../minitest_helper"
 
-describe "My Documents :: integration" do
+describe "My Application :: integration" do
   before do
     use_javascript
   end
@@ -8,7 +8,7 @@ describe "My Documents :: integration" do
   describe "applicants" do
     before do
       login
-      find('#navigation').click_link('My Documents')
+      find('#navigation').click_link('My Application')
     end
 
     it "shows an empty list of documents from the user" do
@@ -43,7 +43,7 @@ describe "My Documents :: integration" do
         before do
           @user.documents.create!(description: "My Resume")
           visit root_path
-          find('#navigation').click_link "My Documents"
+          find('#navigation').click_link "My Application"
         end
 
         it "loads the documents when the page opens" do

@@ -45,12 +45,12 @@ describe "signing up :: integration" do
       page.text.must_include @user.email
     end
 
-    it "displays a my documents link in the hero unit" do
-      find('#about_main').text.must_include('My Documents')
+    it "displays a my application link in the hero unit" do
+      find('#about_main').text.must_include('My Application')
     end
 
-    it "displays a my documents link in the navigation bar" do
-      find('#navigation').text.must_include 'My Documents'
+    it "displays a My Application link in the navigation bar" do
+      find('#navigation').text.must_include 'My Application'
     end
 
     it "doesn't display the sign-in link" do

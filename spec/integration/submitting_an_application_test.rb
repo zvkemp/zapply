@@ -33,7 +33,7 @@ describe "Submitted an application :: integration" do
     end
 
     it "disables document upload" do
-      find('#navigation').click_link "My Documents"
+      find('#navigation').click_link "My Application"
       page.text.must_include "Your application has been submitted."
       page.text.must_include "resume"
       page.text.must_include "cover letter"
@@ -41,15 +41,15 @@ describe "Submitted an application :: integration" do
     end
 
     it "disables application submittal" do
-      find('#navigation').click_link "My Documents"
+      find('#navigation').click_link "My Application"
       page.text.wont_include "Submit Application"
     end
   end
 
   describe "with no documents" do
     it "hides the submit button" do
-      find('#navigation').click_link "My Documents"
-      page.text.wont_include "Submit Application..."
+      find('#navigation').click_link "My Application"
+      page.text.wont_include "Submit Application"
     end
   end
 
@@ -58,7 +58,7 @@ describe "Submitted an application :: integration" do
       @user.documents.create(description: "resume")
       @user.documents.create(description: "cover letter")
       visit root_path
-      find('#navigation').click_link('My Documents')
+      find('#navigation').click_link('My Application')
     end
 
     it "includes a note" do

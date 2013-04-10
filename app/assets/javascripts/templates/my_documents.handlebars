@@ -1,9 +1,11 @@
 {{#if session.signed_in}}
-  <div class="row">
-    <h1>My Documents</h1>
+  <div class="row-fluid">
+    <h1>My Application</h1>
+
+    {{render session_name_field}}
   </div>
 
-  <div class="row">
+  <div class="row-fluid">
     {{#unless session.submitted }}
       <div class="alert alert-info">
           <h3>Drag and drop your resume and cover letter here.</h3>
@@ -11,7 +13,7 @@
             Drag your application documents to this window to upload them, or use the file picker below. 
             You can upload multiple files at once if your browser supports it. We prefer documents in <strong>
             PDF</strong> format, and ideally not more than 4 pages total. We will also accept files in
-            .docx, .doc, or .rtf formats.
+            .docx, .doc, or .rtf formats. Files in other formats <strong>will not be saved.<strong>
           </p>
           <p>
             After you have uploaded your resume, cover letter, and any other material you feel 
@@ -26,12 +28,10 @@
     {{view Zapply.SessionNoteField}}
   </div>
     <br/>
-  <div class="row">
+  <div class="row-fluid">
     {{#unless session.submitted}}
       {{#if length}}
-        <div class="well well-small pagination-centered">
-          <a href="#" class="btn btn-large btn-success span7" style="float: none;" {{action openModalSubmit}}>Submit Application...</a>
-        </div>
+        <a href="#" class="btn btn-large btn-success span7" style="float: none;" {{action openModalSubmit}}>Submit Application...</a>
       {{/if}}
     {{/unless}}
   </div>

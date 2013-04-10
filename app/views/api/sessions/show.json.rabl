@@ -4,10 +4,11 @@ node(:id) { 1 }
 if @session.is_a? User
   node(:admin) { |u| u.admin? }
   node(:note){ |u| u.note }
+  node(:name){ |u| u.name }
   node(:signed_in) { true }
   # node(:application_status) { @session.submitted? ? "Application Submitted" : "Application In Progress" }
   node(:links) do 
-    [{ text: 'My Documents',  href: '#my_documents' },
+    [{ text: 'My Application',  href: '#my_documents' },
      { text: 'sign out', href: destroy_user_session_path,
         :'data-method' => 'delete', 
         :rel         => 'nofollow'}
