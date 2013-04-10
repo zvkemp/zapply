@@ -1,3 +1,3 @@
 class Api::AdminController < Api::BaseController
-  before_filter :user_is_admin?
+  before_filter :authorize_admin
 end

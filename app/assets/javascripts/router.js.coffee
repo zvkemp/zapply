@@ -2,7 +2,7 @@ Zapply.Router.map (match)->
   # match('/').to('index')
   @route 'home', path: '/'
   @route 'applicants', path: '/applicants'
-  @route 'applicant', path: '/applicant/:applicant_id'
+  @route 'applicant', path: '/applicants/:applicant_id'
   @route 'documents', path: '/my_application'
 
 
@@ -26,6 +26,6 @@ Zapply.ApplicantsRoute = Ember.Route.extend
 
 Zapply.ApplicantRoute = Ember.Route.extend
   model: (params) -> Zapply.Applicant.find(params.applicant_id)
-  setupController: (controller, applicant)->
-    window.a = controller.get('content')
+  # setupController: (controller, applicant)->
+    # window.a = controller.get('content')
 

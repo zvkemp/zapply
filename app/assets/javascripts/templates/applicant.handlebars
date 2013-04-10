@@ -2,8 +2,14 @@
 <h3>{{content.email}}</h3>
 
 
-{{#if isLoaded}}
-  <ul>
-    <li>docs here</li>
-  </ul>
-{{/if}}
+<table class="table">
+
+  {{#each content.documents }}
+    <tr>
+      <td>{{description}}</td>
+      <td>{{material}}</td>
+      <td><a {{bindAttr href="download_href"}}>download</a></td>
+    </tr>
+  {{/each}}
+
+</table>
