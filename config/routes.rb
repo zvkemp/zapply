@@ -9,6 +9,7 @@ ZapplyLite::Application.routes.draw do
 
     # admin only
     resources :applicants
+    resources :ratings
   end
 
   # resources :documents, only: [:new, :create]

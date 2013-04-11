@@ -13,3 +13,16 @@
   {{/each}}
 
 </table>
+
+<div class="well">
+  quantitative: {{view Ember.TextField valueBinding="rating.quantitative" }}<br />
+  qualitative: {{view Ember.TextField valueBinding="rating.qualitative" }}<br />
+  arts_landscape: {{view Ember.TextField valueBinding="rating.arts_landscape" }}<br />
+  experience: {{view Ember.TextField valueBinding="rating.experience" }}<br />
+  passion: {{view Ember.TextField valueBinding="rating.passion" }}<br />
+  english: {{view Ember.TextField valueBinding="rating.english" }}<br />
+  computing: {{view Ember.TextField valueBinding="rating.computing" }}<br />
+  {{view Ember.TextArea valueBinding="rating.comments" class="span8" rows='4'}}<br />
+
+  <a href="#" {{action commitRating}}>save changes</a>
+</div>

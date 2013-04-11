@@ -24,8 +24,12 @@ Zapply.DocumentsRoute = Ember.Route.extend
 Zapply.ApplicantsRoute = Ember.Route.extend
   model: -> Zapply.Applicant.find()
 
+
+
 Zapply.ApplicantRoute = Ember.Route.extend
   model: (params) -> Zapply.Applicant.find(params.applicant_id)
-  # setupController: (controller, applicant)->
-    # window.a = controller.get('content')
+
+  setupController: (controller, applicant) ->
+    controller.set('content', applicant)
+    controller.set('rating', Zapply.Rating.find(applicant.get('id'))) # surprisingly, this works
 

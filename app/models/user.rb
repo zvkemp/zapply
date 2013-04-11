@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :documents
+  has_many :ratings, foreign_key: :applicant_id
+  has_many :applicant_ratings, :class_name => "Rating", foreign_key: :rater_id
 
   def self.applicants
     where(admin: false)
