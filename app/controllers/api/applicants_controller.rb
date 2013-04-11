@@ -1,7 +1,7 @@
 class Api::ApplicantsController < Api::AdminController
 
   def index
-    respond_with(@applicants = User.applicants.includes(:documents), each_serializer: ApplicantSerializer)
+    respond_with(@applicants = User.applicants.submitted.includes(:documents), each_serializer: ApplicantSerializer)
   end
 
   def show

@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
     where(admin: false)
   end
 
+  def self.submitted
+    where(submitted: true)
+  end
+
   def submit!
     update_attributes(submitted: true)
   end
