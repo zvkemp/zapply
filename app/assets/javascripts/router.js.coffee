@@ -31,5 +31,7 @@ Zapply.ApplicantRoute = Ember.Route.extend
 
   setupController: (controller, applicant) ->
     controller.set('content', applicant)
-    controller.set('rating', Zapply.Rating.find(applicant.get('id'))) # surprisingly, this works
+    window.a = applicant
+    # console.log 'current_rating_id = ', applicant.get('current_rating_id')
+    # controller.set('rating', Zapply.Rating.find(applicant.get('current_rating_id'))) # surprisingly, this works
 

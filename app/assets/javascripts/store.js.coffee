@@ -1,4 +1,5 @@
 DS.RESTAdapter.configure('Zapply.Document', sideloadAs: 'documents')
+DS.RESTAdapter.configure('Zapply.Rating', sideloadAs: 'ratings')
 
 Zapply.Store = DS.Store.extend
   revision: 11

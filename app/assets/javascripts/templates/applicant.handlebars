@@ -1,28 +1,32 @@
-<h1>{{content.name}}</h1>
-<h3>{{content.email}}</h3>
+
 
 
 <table class="table">
+  <thead>
+    <tr>
+      <th>
+        <h2>{{content.name}}</h2>
+        <h3>{{content.email}}</h3>
+      </th>
+      <th>
+        <h1 class="info">{{content.current_rating.average}}</h1>
+      </th>
+        
+      <th>
+        <h1>{{content.average_rating}}</h1>
+      </th>
+    </tr>
+
+  </thead>
 
   {{#each content.documents }}
     <tr>
-      <td>{{description}}</td>
       <td>{{material}}</td>
+      <td>{{description}}</td>
       <td><a {{bindAttr href="download_href"}}>download</a></td>
     </tr>
   {{/each}}
 
 </table>
 
-<div class="well">
-  quantitative: {{view Ember.TextField valueBinding="rating.quantitative" }}<br />
-  qualitative: {{view Ember.TextField valueBinding="rating.qualitative" }}<br />
-  arts_landscape: {{view Ember.TextField valueBinding="rating.arts_landscape" }}<br />
-  experience: {{view Ember.TextField valueBinding="rating.experience" }}<br />
-  passion: {{view Ember.TextField valueBinding="rating.passion" }}<br />
-  english: {{view Ember.TextField valueBinding="rating.english" }}<br />
-  computing: {{view Ember.TextField valueBinding="rating.computing" }}<br />
-  {{view Ember.TextArea valueBinding="rating.comments" class="span8" rows='4'}}<br />
-
-  <a href="#" {{action commitRating}}>save changes</a>
-</div>
+{{! view Zapply.ApplicantRating}}

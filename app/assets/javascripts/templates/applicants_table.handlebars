@@ -2,6 +2,7 @@
     
     {{#each controller}}
       <tr {{bindAttr class="submitted:info" }}>
+        <td>{{#linkTo applicant this}}{{name}}{{/linkTo}}</td>
         <td>{{#linkTo applicant this}}{{email}}{{/linkTo}}</td>
         <td>{{submitted}}</td>
       </tr>

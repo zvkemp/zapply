@@ -1,0 +1,44 @@
+
+<div class="well">
+  <h3>Average: {{averageRating}}</h3>
+
+  <table class="table table-condensed">
+    <tr>
+      <td>quantitative:</td>
+      <td>{{view Ember.TextField valueBinding="rating.quantitative"}}</td>
+    </tr>
+    <tr>
+      <td>qualitative:</td>
+      <td>{{view Ember.TextField valueBinding="rating.qualitative"}}</td>
+    </tr>
+    <tr>
+      <td>arts_landscape:</td>
+      <td>{{view Ember.TextField valueBinding="rating.arts_landscape"}}</td>
+    </tr>
+    <tr>
+      <td>experience:</td>
+      <td>{{view Ember.TextField valueBinding="rating.experience"}}</td>
+    </tr>
+    <tr>
+      <td>passion:</td>
+      <td>{{view Ember.TextField valueBinding="rating.passion"}}</td>
+    </tr>
+    <tr>
+      <td>english:</td>
+      <td>{{view Ember.TextField valueBinding="rating.english"}}</td>
+    </tr>
+    <tr>
+      <td>computing:</td>
+      <td>{{view Ember.TextField valueBinding="rating.computing"}}</td>
+    </tr>
+    <tr> <td>comments:</td> <td>{{view Ember.TextArea valueBinding="rating.comments" class="span8" rows='4'}}</td><br /></tr>
+
+    {{#if rating.isDirty}}
+      <tr>
+        <td></td>
+        <td><a href="#" class="btn btn-large btn-warning span8" {{action commitRating}}>save changes</a></td>
+      </tr>
+    {{/if}}
+  </table>
+
+</div>

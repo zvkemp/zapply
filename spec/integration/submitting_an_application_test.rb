@@ -64,6 +64,7 @@ describe "Submitted an application :: integration" do
     it "includes a note" do
       fill_in "submit_note", with: "this is an application note"
       click_on "save_changes"
+      sleep(0.1) # needs to wait for commit
       u = User.find(@user.id)
       u.note.must_equal "this is an application note"
     end
@@ -71,6 +72,7 @@ describe "Submitted an application :: integration" do
     it "submits via the big green button" do
       click_link "Submit Application..."
       click_link "Confirm"
+      sleep(0.1) # needs to wait for commit
       u = User.find(@user.id)
       u.submitted?.must_equal true
       page.text.wont_include "Submit Application..."
