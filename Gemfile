@@ -12,7 +12,7 @@ gem 'thin'
 gem 'active_model_serializers'
 
 gem 'carrierwave'
-gem 'remotipart'
+# gem 'remotipart'
 
 # Gems used only for assets and not required
 # in production environments by default.
