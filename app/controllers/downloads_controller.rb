@@ -6,7 +6,6 @@ class DownloadsController < ApplicationController
     send_file document.material.path
   end
 
-
 private
   def document_source
     user_is_admin? ? Document.scoped : current_user.documents 

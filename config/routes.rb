@@ -14,4 +14,5 @@ ZapplyLite::Application.routes.draw do
 
   # resources :documents, only: [:new, :create]
   resources :downloads, only: [:show]
+  resources :images, only: [:show]
 end
