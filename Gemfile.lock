@@ -125,8 +125,6 @@ GEM
       faye-websocket (~> 0.4, >= 0.4.4)
       http_parser.rb (~> 0.5.3)
     polyglot (0.3.3)
-    rabl (0.8.2)
-      activesupport (>= 2.3.14)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -193,6 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   bootstrap-sass (~> 2.3.1.0)
   capybara
   carrierwave
@@ -208,7 +207,6 @@ DEPENDENCIES
   jquery-rails
   minitest
   poltergeist (~> 1.1.0)
-  rabl
   rails (= 3.2.12)
   remotipart
   sass-rails (~> 3.2.3)

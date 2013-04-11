@@ -6,6 +6,10 @@ ZapplyLite::Application.routes.draw do
   namespace :api do
     resources :sessions
     resources :documents
+
+    # admin only
+    resources :applicants
+    resources :ratings
   end
 
   # resources :documents, only: [:new, :create]

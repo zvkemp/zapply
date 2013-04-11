@@ -10,7 +10,7 @@
       <td width="50%"><i class="icon-file"></i>&emsp;{{material}}</td>
       <td width="25%">&emsp;{{description}}</td>
       <td class="actions" width="25%">
-        <a {{bindAttr href="download_path"}} class="btn btn-small">download</a>
+        <a {{bindAttr href="download_href"}} class="btn btn-small">download</a>
         {{#unless controller.session.submitted}}
           <a class="btn btn-danger btn-small" {{action destroyDocument this}}>delete</a>
         {{/unless}}

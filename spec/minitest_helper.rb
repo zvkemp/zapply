@@ -26,7 +26,7 @@ end
 Capybara.javascript_driver = :logging_poltergeist
 
 Capybara.default_selector = :css
-Capybara.default_wait_time = 1
+Capybara.default_wait_time = 3
 
 DatabaseCleaner.strategy = :truncation
 
