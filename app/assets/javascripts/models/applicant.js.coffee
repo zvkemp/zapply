@@ -8,9 +8,7 @@ Zapply.Applicant = DS.Model.extend
   ratings: DS.hasMany('Zapply.Rating')
 
   current_rating: (->
-    c = Zapply.Rating.find(@get('current_rating_id'))
-    window.c = c
-    c
+    Zapply.Rating.find(@get('current_rating_id'))
   ).property('isLoaded')
 
   average_rating: (->

@@ -29,6 +29,7 @@ class Api::RatingsController < Api::AdminController
     @rating       = Rating.find(params[:id])
     rating_params = params[:rating]
     app_id        = rating_params.delete(:applicant_id)
+    rater_name    = rating_params.delete(:rater_name)
     @rating.update_attributes(params[:rating])
     respond_with(@rating)
   end

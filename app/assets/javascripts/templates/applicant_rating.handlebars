@@ -51,11 +51,22 @@
       {{#each ratings}}<td>{{computing}}</td>{{/each}}
     </tr>
 
+  </table>
 
+  <table class="table-condensed table">
+
+      <tr><td><h3>comments:</h3></td></tr>
     <tr>
-      <td>comments:</td>
-      <td colspan='3'>{{view Ember.TextArea valueBinding="current_rating.comments" class="span5" rows='4'}}</td>
+      <td></td><td>{{view Ember.TextArea valueBinding="current_rating.comments" class="span6" rows='4'}}</td>
     </tr>
+
+    {{#each ratings}}
+      <tr>
+        <td>{{rater_name}}</td>
+        <td>{{comments}}</td>
+      </tr>
+    {{/each}}
+
   </table>
 
     {{#if current_rating.isDirty}}
