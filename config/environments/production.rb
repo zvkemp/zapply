@@ -1,6 +1,6 @@
 HOSTS_CONFIG = YAML.load_file("#{Rails.root.to_s}/config/hosts_config.yml")[Rails.env]
-puts "HOSTS_CONFIG:::"
-puts HOSTS_CONFIG.inspect
+# puts "HOSTS_CONFIG:::"
+# puts HOSTS_CONFIG.inspect
 
 ZapplyLite::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
