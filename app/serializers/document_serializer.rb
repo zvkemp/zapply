@@ -1,5 +1,5 @@
 class DocumentSerializer < ActiveModel::Serializer
-  attributes :id, :description, :material, :download_href
+  attributes :id, :description, :material, :download_href, :image_href
 
   def material
     object.material_identifier
@@ -7,6 +7,10 @@ class DocumentSerializer < ActiveModel::Serializer
 
   def download_href
     download_path(object)
+  end
+
+  def image_href
+    image_path(object)
   end
 
 
