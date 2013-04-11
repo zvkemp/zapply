@@ -1,4 +1,16 @@
-
+{{#unless content.application_confirmation_sent}}
+  <div class="alert">
+    <h3>
+      We have not confirmed this application by email.
+    </h3>
+    <p>
+      Please verify the uploads and send a message to <a {{bindAttr href="mailTo"}}>{{content.email}}</a>.
+    </p>
+    <p>
+      When finished, please <a href="#" {{action markConfirmationSent}}>click here to mark the message as sent.</a>
+    </p>
+  </div>
+{{/unless}}
 
 
 <table class="table">

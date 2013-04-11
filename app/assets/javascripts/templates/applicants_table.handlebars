@@ -7,7 +7,7 @@
       <th>my rating</th>
     </tr>
     {{#each controller}}
-      <tr {{bindAttr class="submitted:info" }}>
+      <tr {{bindAttr class="application_confirmation_sent:plain:warning" }}>
         <td>{{#linkTo applicant this}}{{name}}{{/linkTo}}</td>
         <td>{{#linkTo applicant this}}{{email}}{{/linkTo}}</td>
         <td>{{submitted}}</td>
