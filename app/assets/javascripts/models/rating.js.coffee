@@ -8,6 +8,7 @@ Zapply.Rating = DS.Model.extend
   english: DS.attr('number')
   computing: DS.attr('number')
 
+  rater_name: DS.attr('string')
   applicant: DS.belongsTo('Zapply.Applicant')
 
   categories: [

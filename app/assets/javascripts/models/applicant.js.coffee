@@ -14,5 +14,31 @@ Zapply.Applicant = DS.Model.extend
   ).property('isLoaded')
 
   average_rating: (->
-    '20 [nyi]'
-  ).property()
+    averages = @get('ratings').map (r) -> r.get('average')
+    count = 0
+    sum = averages.reduce (x, y) ->
+      if n = parseFloat(y)
+        x += n 
+        count += 1
+      x
+    , 0.0
+
+    (sum / count).toFixed(1)
+  ).property('ratings.@each.average')
+
+
+
+  # average_rating: (->
+  #   sum = 0
+  #   count = 0
+
+  #   for rating in @get('ratings')
+  #     a = r.get('average')
+  #     console.log rating
+  #     if a
+  #       sum += a
+  #       count += 1
+  #       console.log "YES:::", a, sum, count
+
+  #   (sum / count).toFixed(1)
+  # ).property('ratings.@each.average')

@@ -1,44 +1,67 @@
 
 <div class="well">
-  <h3>Average: {{averageRating}}</h3>
-
   <table class="table table-condensed">
-    <tr>
-      <td>quantitative:</td>
-      <td>{{view Ember.TextField valueBinding="rating.quantitative"}}</td>
-    </tr>
-    <tr>
-      <td>qualitative:</td>
-      <td>{{view Ember.TextField valueBinding="rating.qualitative"}}</td>
-    </tr>
-    <tr>
-      <td>arts_landscape:</td>
-      <td>{{view Ember.TextField valueBinding="rating.arts_landscape"}}</td>
-    </tr>
-    <tr>
-      <td>experience:</td>
-      <td>{{view Ember.TextField valueBinding="rating.experience"}}</td>
-    </tr>
-    <tr>
-      <td>passion:</td>
-      <td>{{view Ember.TextField valueBinding="rating.passion"}}</td>
-    </tr>
-    <tr>
-      <td>english:</td>
-      <td>{{view Ember.TextField valueBinding="rating.english"}}</td>
-    </tr>
-    <tr>
-      <td>computing:</td>
-      <td>{{view Ember.TextField valueBinding="rating.computing"}}</td>
-    </tr>
-    <tr> <td>comments:</td> <td>{{view Ember.TextArea valueBinding="rating.comments" class="span8" rows='4'}}</td><br /></tr>
-
-    {{#if rating.isDirty}}
+    <thead>
       <tr>
-        <td></td>
-        <td><a href="#" class="btn btn-large btn-warning span8" {{action commitRating}}>save changes</a></td>
+        <th>
+          <h3 class="info">my rating:</h3>
+        </th>
+        <th>
+          <h1>{{content.current_rating.average}}</h1>
+        </th>
+
+        {{#each ratings}}
+          <th>{{rater_name}}</th>
+        {{/each}}
       </tr>
-    {{/if}}
+    </thead>
+    <tr>
+      <td>quantitative skills:</td>
+      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.quantitative"}}</td>
+      {{#each ratings}}<td>{{quantitative}}</td>{{/each}}
+    </tr>
+    <tr>
+      <td>qualitative skills:</td>
+      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.qualitative"}}</td>
+      {{#each ratings}}<td>{{qualitative}}</td>{{/each}}
+    </tr>
+    <tr>
+      <td>knowledge of arts sector:</td>
+      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.arts_landscape"}}</td>
+      {{#each ratings}}<td>{{arts_landscape}}</td>{{/each}}
+    </tr>
+    <tr>
+      <td>administration &amp; marketing xp:</td>
+      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.experience"}}</td>
+      {{#each ratings}}<td>{{experience}}</td>{{/each}}
+    </tr>
+    <tr>
+      <td>passion for arts:</td>
+      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.passion"}}</td>
+      {{#each ratings}}<td>{{passion}}</td>{{/each}}
+    </tr>
+    <tr>
+      <td>writing &amp; communication:</td>
+      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.english"}}</td>
+      {{#each ratings}}<td>{{english}}</td>{{/each}}
+    </tr>
+    <tr>
+      <td>computer wrangling:</td>
+      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.computing"}}</td>
+      {{#each ratings}}<td>{{computing}}</td>{{/each}}
+    </tr>
+
+
+    <tr>
+      <td>comments:</td>
+      <td colspan='3'>{{view Ember.TextArea valueBinding="current_rating.comments" class="span5" rows='4'}}</td>
+    </tr>
   </table>
+
+    {{#if current_rating.isDirty}}
+      <a href="#" class="btn btn-large btn-warning" {{action commitRating}}>save changes</a>
+    {{/if}}
+
+
 
 </div>

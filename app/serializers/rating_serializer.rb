@@ -8,7 +8,12 @@ class RatingSerializer < ActiveModel::Serializer
     :english, # => writing
     :computing, # => computer wrangling
     :applicant_id,
-    :rater_id
+    :rater_id,
+    :rater_name
+
+  def rater_name
+    object.rater.name
+  end
     
 
 end

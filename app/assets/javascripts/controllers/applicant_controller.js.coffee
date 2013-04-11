@@ -1,4 +1,4 @@
 Zapply.ApplicantController = Ember.ObjectController.extend
 
   commitRating: ->
-    @get('rating').get('transaction').commit()
+    @get('current_rating').get('transaction').commit()
