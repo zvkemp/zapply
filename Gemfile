@@ -8,7 +8,8 @@ gem 'haml-rails'
 
 gem 'sqlite3'
 gem 'thin'
-gem 'rabl'
+# gem 'rabl'
+gem 'active_model_serializers'
 
 gem 'carrierwave'
 gem 'remotipart'

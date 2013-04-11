@@ -42,14 +42,14 @@ describe "Submitted an application :: integration" do
 
     it "disables application submittal" do
       find('#navigation').click_link "My Application"
-      page.text.wont_include "Submit Application"
+      page.text.wont_include "Submit Application..."
     end
   end
 
   describe "with no documents" do
     it "hides the submit button" do
       find('#navigation').click_link "My Application"
-      page.text.wont_include "Submit Application"
+      page.text.wont_include "Submit Application..."
     end
   end
 
@@ -61,7 +61,22 @@ describe "Submitted an application :: integration" do
       find('#navigation').click_link('My Application')
     end
 
-    
+    it "includes a note" do
+      fill_in "submit_note", with: "this is an application note"
+      click_on "save_changes"
+      sleep(0.1) # needs to wait for commit
+      u = User.find(@user.id)
+      u.note.must_equal "this is an application note"
+    end
+
+    it "submits via the big green button" do
+      click_link "Submit Application..."
+      click_link "Confirm"
+      sleep(0.1) # needs to wait for commit
+      u = User.find(@user.id)
+      u.submitted?.must_equal true
+      page.text.wont_include "Submit Application..."
+    end
   end
 
   # TODO: two-stage submit interface procedure (ie, submit -> confirm submit)

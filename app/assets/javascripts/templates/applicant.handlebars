@@ -1,0 +1,44 @@
+{{#unless content.application_confirmation_sent}}
+  <div class="alert">
+    <h3>
+      We have not confirmed this application by email.
+    </h3>
+    <p>
+      Please verify the uploads and send a message to <a {{bindAttr href="mailTo"}}>{{content.email}}</a>.
+    </p>
+    <p>
+      When finished, please <a href="#" {{action markConfirmationSent}}>click here to mark the message as sent.</a>
+    </p>
+  </div>
+{{/unless}}
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        <h2>{{content.name}}</h2>
+        <h3>{{content.email}}</h3>
+      </th>
+      <th>
+        <h1 class="info">{{content.current_rating.average}}</h1>
+      </th>
+        
+      <th>
+        <h1>{{content.average_rating}}</h1>
+      </th>
+    </tr>
+
+  </thead>
+
+  {{#each content.documents }}
+    <tr>
+      <td>{{material}}</td>
+      <td>{{description}}</td>
+      <td><a {{bindAttr href="download_href"}}>download</a></td>
+    </tr>
+  {{/each}}
+
+</table>
+
+{{view Zapply.ApplicantRating}}

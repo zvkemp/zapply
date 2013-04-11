@@ -13,7 +13,7 @@ module ZapplyLite
       end
 
       def admin_user
-        @user ||= FactoryGirl.create(:user, admin: true, email: "zvkemp@gmail.com")
+        @user ||= FactoryGirl.create(:user, admin: true, email: "admin@zapply.com")
       end
 
       def login(user = default_user)

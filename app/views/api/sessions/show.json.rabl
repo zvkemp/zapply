@@ -2,6 +2,7 @@ object @session => :session
 attributes :email, :submitted
 node(:id) { 1 }
 if @session.is_a? User
+  node(:admin) { |u| u.admin? }
   node(:note){ |u| u.note }
   node(:name){ |u| u.name }
   node(:signed_in) { true }
