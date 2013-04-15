@@ -22,7 +22,9 @@ Zapply.Applicant = DS.Model.extend
       x
     , 0.0
 
-    (sum / count).toFixed(1)
+    avg = (sum / count).toFixed(1)
+    if avg == "NaN" then "" else avg
+
   ).property('ratings.@each.average')
 
 
