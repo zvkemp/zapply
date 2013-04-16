@@ -3,6 +3,7 @@ Zapply.Applicant = DS.Model.extend
   
   email: DS.attr('string')
   name: DS.attr('string')
+  note: DS.attr('string')
   submitted: DS.attr('boolean')
   application_confirmation_sent: DS.attr('boolean')
   current_rating_id: DS.attr('number')
@@ -22,7 +23,9 @@ Zapply.Applicant = DS.Model.extend
       x
     , 0.0
 
-    (sum / count).toFixed(1)
+    avg = (sum / count).toFixed(1)
+    if avg == "NaN" then "" else avg
+
   ).property('ratings.@each.average')
 
 

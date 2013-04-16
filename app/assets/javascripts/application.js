@@ -16,6 +16,7 @@
 //= require bootstrap-alert
 //= require bootstrap-modal
 //= require handlebars
+//= require showdown.js
 //= require ember
 //= require ember-data
 //= require_self

@@ -24,6 +24,11 @@ Zapply.DocumentsRoute = Ember.Route.extend
 Zapply.ApplicantsRoute = Ember.Route.extend
   model: -> Zapply.Applicant.find()
 
+  setupController: (controller) ->
+    controller.set('sortProperties', ['average_rating'])
+    controller.set('sortAscending', false)
+    window.c = controller
+
 
 
 Zapply.ApplicantRoute = Ember.Route.extend

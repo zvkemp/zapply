@@ -30,7 +30,8 @@ Zapply.Rating = DS.Model.extend
       if n
         sum += n
         count += 1
-    (sum / count).toFixed(1)
+    avg = (sum / count).toFixed(1)
+    if avg == "NaN" then "" else avg
 
   ).property('quantitative', 'qualitative', 'arts_landscape', 'experience', 'passion', 'english', 'computing')
 
