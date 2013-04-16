@@ -3,6 +3,7 @@ Zapply.Applicant = DS.Model.extend
   
   email: DS.attr('string')
   name: DS.attr('string')
+  note: DS.attr('string')
   submitted: DS.attr('boolean')
   application_confirmation_sent: DS.attr('boolean')
   current_rating_id: DS.attr('number')
