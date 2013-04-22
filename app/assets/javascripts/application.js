@@ -23,6 +23,10 @@
 //= require zapply
 
 Zapply = Ember.Application.create({
-  rootElement: '#ember-app',
-  LOG_TRANSITIONS: true
+  rootElement: '#ember-app'
 });
+
+
+if (top.location!= self.location) {
+  top.location = self.location.href
+}
