@@ -1,5 +1,5 @@
 class ApplicantSerializer < ActiveModel::Serializer
-  attributes :id, :email, :submitted, :name, :current_rating_id, :application_confirmation_sent, :note
+  attributes :id, :email, :submitted, :name, :current_rating_id, :application_confirmation_sent, :note, :under_consideration, :rejection_notice_sent
   embed :ids, :include => true
   # embed :ids
 

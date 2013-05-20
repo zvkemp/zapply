@@ -7,13 +7,33 @@
       <th>my rating</th>
     </tr>
     {{#each controller}}
-      <tr {{bindAttr class="application_confirmation_sent:plain:warning" }}>
-        <td>{{#linkTo applicant this}}{{name}}{{/linkTo}}</td>
-        <td>{{#linkTo applicant this}}{{email}}{{/linkTo}}</td>
-        <td>{{submitted}}</td>
-        <td><strong>{{ average_rating }}</strong></td>
-        <td>{{ current_rating.average }}</td>
-      </tr>
+      {{#if this.under_consideration}}
+        <tr {{bindAttr class="application_confirmation_sent:plain:warning" }}>
+          <td>{{#linkTo applicant this}}{{name}}{{/linkTo}}</td>
+          <td>{{#linkTo applicant this}}{{email}}{{/linkTo}}</td>
+          <td>{{submitted}}</td>
+          <td><strong>{{ average_rating }}</strong></td>
+          <td>{{ current_rating.average }}</td>
+        </tr>
+      {{/if}}
+    {{/each}}
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    {{#each controller}}
+      {{#unless this.under_consideration}}
+        <tr class="error">
+          <td>{{#linkTo applicant this}}{{name}}{{/linkTo}}</td>
+          <td>{{#linkTo applicant this}}{{email}}{{/linkTo}}</td>
+          <td>{{submitted}}</td>
+          <td><strong>{{ average_rating }}</strong></td>
+          <td>{{ current_rating.average }}</td>
+        </tr>
+      {{/unless}}
     {{/each}}
 
   </table>

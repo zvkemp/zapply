@@ -12,6 +12,13 @@
   </div>
 {{/unless}}
 
+{{#unless content.under_consideration}}
+  <div class="alert alert-danger">
+    Applicant no longer under consideration.
+    <a href="#" class="btn btn-danger pull-right btn-mini" {{action returnToPool}}>reconsider</a>
+  </div>
+{{/unless}}
+
 
 
 
@@ -50,5 +57,13 @@
   {{/each}}
 
 </table>
+{{#if content.under_consideration}}
+  {{view Zapply.ApplicantRating}}
+{{/if}}
 
-{{view Zapply.ApplicantRating}}
+
+{{#if content.under_consideration}}
+  <div class="well">
+    <a href="#" class="btn btn-danger" {{action removeFromPool}}>remove from pool</a>
+  </div>
+{{/if}}

@@ -10,3 +10,11 @@ Zapply.ApplicantController = Ember.ObjectController.extend
   markConfirmationSent: ->
     @set('application_confirmation_sent', true)
     @get('transaction').commit()
+
+  removeFromPool: ->
+    @set('under_consideration', false)
+    @get('transaction').commit()
+
+  returnToPool: ->
+    @set('under_consideration', true)
+    @get('transaction').commit()
