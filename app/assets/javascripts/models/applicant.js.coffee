@@ -5,7 +5,9 @@ Zapply.Applicant = DS.Model.extend
   name: DS.attr('string')
   note: DS.attr('string')
   submitted: DS.attr('boolean')
+  under_consideration: DS.attr('boolean')
   application_confirmation_sent: DS.attr('boolean')
+  rejection_notice_sent: DS.attr('boolean')
   current_rating_id: DS.attr('number')
   ratings: DS.hasMany('Zapply.Rating')
 
