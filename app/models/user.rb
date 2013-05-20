@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :submitted, :note, :name,
-    :application_confirmation_sent
+    :application_confirmation_sent, :under_consideration, :rejection_notice_sent
   # attr_accessible :title, :body
 
   has_many :documents
@@ -16,6 +16,14 @@ class User < ActiveRecord::Base
 
   def self.applicants
     where(admin: false)
+  end
+
+  def self.under_consideration
+    where(under_consideration: true)
+  end
+
+  def self.rejected
+    where(under_consideration: false)
   end
 
   def self.submitted
