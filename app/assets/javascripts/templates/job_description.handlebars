@@ -1,8 +1,7 @@
 <div class="row-fluid">
   <div class="hero-unit" id="about_main">
-    <h4>Job Opening:</h4>
-    <h1><span style="font-weight:400;">Intrinsic Impact</span> Program Manager</h1>
-    <h3>WolfBrown LLC, San Francisco</h3>
+    <h1>{{model.title}}</h1>
+    <h3>{{model.location}}</h3>
     <div id="actions">
       {{#if session.signed_in}}
         <a href="#my_application" class="btn btn-large btn-success">My Application</a>
@@ -12,105 +11,13 @@
     </div>
   </div>
 </div>
-<div class="alert alert-info">
-  <h3>The application period has ended.</h3>
-  <p>
-    Thank you for your interest in the Intrinsic Impact Program Manager position. If you have completed your application but have not yet submitted it, please email zach@wolfbrown.com.
-  </p>
-</div>
-<div class="row-fluid"><div class="span12">
-  <h2>BACKGROUND</h2>
-</div></div>
 
-<div class="row-fluid">
-  <div class="span5">
-    <p>WolfBrown is a leading provider of market research and management consulting services to cultural institutions, arts agencies and foundations in the US and abroad. A profile of the firm is available at <a href="http://wwww.wolfbrown.com">www.wolfbrown.com</a>, including a representative list of clients and projects.</p>
-    <p>WolfBrown’s San Francisco office specializes in market research and evaluation, typically in support of various institutional projects and foundation grant programs to build audiences, expand participation and deepen engagement in the arts. To accomplish our work, we draw on an ever-widening circle of qualitative and quantitative research methods, always seeking new and better approaches to addressing the field’s most persistent research questions and challenges.</p>
-  </div>
-  <div class="span5">
-    <p>Since 2007, WolfBrown has developed significant new survey methods and software tools for assisting arts groups in assessing the intrinsic impacts of their artistic programs. This developmental work has evolved significantly through a series of groundbreaking studies for arts agencies and consortia in the US, UK, and Australia, as well as through our own internal development efforts. The next step in this long arc of work involves bringing low-cost impact assessment capabilities to a wider circle of arts organizations in the US and abroad. In order to realize this vision, WolfBrown seeks a uniquely qualified individual to help launch and manage a product line of intrinsic impact tools. This is a full-time position, located in our San Francisco office.</p>
-  </div>
-</div>
-
-<hr />
-
-<div class="row-fluid"><div class="span12">
-  <h2>POSITION SUMMARY</h2>
-</div></div>
-
-<div class="row-fluid">
-  <div class="span5">
-    <p>The Intrinsic Impact Program Manager is a new full-time position that will oversee the national rollout of WolfBrown’s Intrinsic Impact product line. This is both a sales and client service position, with a focus on marketing and sales to arts organizations who wish to license and use WolfBrown’s proprietary impact assessment tools. The position will report to Alan Brown, principal of WolfBrown, and will collaborate daily with other WolfBrown staff in a highly integrated work environment. Preferred candidates must be able to relocate to the San Francisco Bay Area, although we will consider alternative situations for extraordinarily qualified applicants.</p>
-    <p>This is a highly entrepreneurial position for a gregarious, early-career individual with a track record of successful marketing and communications work.</p>
-  </div>
-
-  <div class="span7">
-    <div class="well well-small">
-      <h5>The Intrinsic Impact Program Manager will be responsible for:</h5>
-      <ul>
-        <li>Implementing a national sales and marketing campaign, including direct mail, conference participation, and personal sales, and will be accountable for sales goals;</li>
-        <li>Working in partnership with other WolfBrown staff in the conceptualization of new tools and services; </li>
-        <li>Answering incoming queries from arts organizations; </li>
-        <li>Securing, finalizing and administering contracts and renewals with new clients; </li>
-        <li>Mastering WolfBrown’s proprietary survey tools and software, in order to train and service new clients; </li>
-        <li>Supervising the work of client service representatives, to be hired as the program expands;</li>
-        <li>Maintaining and expanding a dedicated Intrinsic Impact website.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<hr />
-
-<div class="row-fluid"><div class="span12">
-  <h2>DESIRED QUALIFICATIONS</h2>
-</div></div>
-<div class="row-fluid">
-  <div class="span5">
-    <p>The successful candidate will have strong organizational, marketing and computing skills, and must be highly detail-oriented and team-oriented. A four-year college degree is required. The work will appeal to individuals who are self-directed, highly motivated, and skilled communicators.</p>
-    <div class="well">
-      <h5>The following skills and experience are desired, but not required:</h5>
-      <ul>
-        <li>Some experience with survey research methods, sociology or consumer behavior or psychology, with a capacity to interpret quantitative data;</li>
-        <li>Some knowledge of, or connection to, the national arts landscape, through a service organization or other network;</li>
-        <li>Some training as an artist (any discipline)</li>
-        <li>Data analysis skills (training will be provided).</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="span7">
-    <div class="well">
-      <h5>The following core competencies are required:</h5>
-      <ul>
-        <li>At least two years' experience in a full-time arts marketing, ticketing, or other arts management position (preferably in the performing arts), with strong evidence of professional growth and accomplishment;</li>
-        <li>A deep passion for the arts;</li>
-        <li>Excellent communication skills, both verbal and written, as evidenced throughout the interview process, and through work samples;</li>
-        <li>Strong organization skills, including project management and time management, as evidenced by work samples;</li>
-        <li>High fluency in English;</li>
-        <li>Sensitivity to culturally diverse communities; </li>
-        <li>Excellent computing skills (including Microsoft applications in a Mac environment), and demonstrated capacity to quickly master online survey software tools; </li>
-        <li>Experience with website production and social media.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<hr />
-
-
-<div class="row-fluid">
-  <div class="span5">
-    <h2>COMPENSATION</h2>
-    <p>This is a full-time salaried position, starting in the range of $45,000 to $55,000, plus a discretionary bonus based on individual and company performance. A benefits package is also available, including medical and dental benefits and a profit sharing plan.</p>
-  </div>
-  <div class="span5">
-    <h2>APPLICATION PROCEDURE</h2>
+{{#if model.closed}}
+  <div class="alert alert-info">
+    <h3>The application period has ended.</h3>
     <p>
-      <strong>The application deadline is May 13, 2013.</strong>
-      Interested candidates should create an account on this website and upload a resume and cover letter. For technical support, use the 'contact us' link at the lower left, or email <a href="mailto:zach@wolfbrown.com">zach@wolfbrown.com</a>.
+      Thank you for your interest in the <b>{{model.title}}</b> position. If you have completed your application but have not yet submitted it, please email zach@wolfbrown.com.
     </p>
-
-    <p><span class="text-error">Please, no telephone inquiries.</span> References, writing samples, and other work samples will only be requested of finalists.</p>
   </div>
-</div>
+{{/if}}
+{{{model.description}}}

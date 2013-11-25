@@ -3,6 +3,8 @@ class JobOpening < ActiveRecord::Base
     :open_date, :closed_date
 
 
-  
+  def self.current
+    last
+  end
 
 end

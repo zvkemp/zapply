@@ -8,6 +8,7 @@ Zapply.Router.map (match)->
 
 
 Zapply.HomeRoute = Ember.Route.extend
+  model: -> Zapply.JobOpening.find(1)
   renderTemplate: ->
     @render('job_description') # handlebars template
 

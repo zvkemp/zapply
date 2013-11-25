@@ -22,7 +22,12 @@ ActiveRecord::Schema.define(:version => 20131125230425) do
   end
 
   create_table "job_openings", :force => true do |t|
-    t.string   "description"
+    t.string   "title"
+    t.string   "location"
+    t.text     "description"
+    t.integer  "user_id"
+    t.date     "open_date"
+    t.date     "closed_date"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

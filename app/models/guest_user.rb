@@ -24,4 +24,8 @@ class GuestUser
   def note
     ""
   end
+
+  def name
+    "guest"
+  end
 end

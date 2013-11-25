@@ -10,9 +10,11 @@ ZapplyLite::Application.routes.draw do
     # admin only
     resources :applicants
     resources :ratings
+    resources :job_openings, only: [:show]
   end
 
   # resources :documents, only: [:new, :create]
   resources :downloads, only: [:show]
   resources :images, only: [:show]
+
 end
