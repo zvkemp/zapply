@@ -1,5 +1,5 @@
 class SessionSerializer < ActiveModel::Serializer
-  attributes :id, :email, :submitted, :admin, :signed_in, :note
+  attributes :id, :email, :submitted, :admin, :signed_in, :note, :name
 
   def id
     1
