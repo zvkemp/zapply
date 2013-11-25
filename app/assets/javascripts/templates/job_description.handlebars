@@ -6,6 +6,8 @@
     <div id="actions">
       {{#if session.signed_in}}
         <a href="#my_application" class="btn btn-large btn-success">My Application</a>
+      {{else}}
+        <a href="/users/sign_up" class="btn btn-large btn-success">Apply Now</a>
       {{/if}}
     </div>
   </div>
