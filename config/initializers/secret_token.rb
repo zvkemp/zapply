@@ -41,4 +41,5 @@ class ZapplyLite::GenerateSecretToken
     end
 end
 
-ZapplyLite::Application.config.secret_token = ENV.fetch('ZAPPLY_SECRET'){ ZapplyLite::GenerateSecretToken.new.token }
+# ZapplyLite::Application.config.secret_token = ENV.fetch('ZAPPLY_SECRET'){ ZapplyLite::GenerateSecretToken.new.token }
+ZapplyLite::Application.config.secret_token = YAML.load_file("#{Rails.root.to_s}/config/app_secret")[Rails.env]
