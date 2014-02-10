@@ -7,6 +7,8 @@ Zapply.Rating = DS.Model.extend
   passion: DS.attr('number')
   english: DS.attr('number')
   computing: DS.attr('number')
+  research: DS.attr('number')
+  archiving: DS.attr('number')
 
   rater_name: DS.attr('string')
   applicant: DS.belongsTo('Zapply.Applicant')
@@ -35,7 +37,7 @@ Zapply.Rating = DS.Model.extend
     avg = (sum / count).toFixed(1)
     if avg == "NaN" then "" else avg
 
-  ).property('quantitative', 'qualitative', 'arts_landscape', 'experience', 'passion', 'english', 'computing')
+  ).property('quantitative', 'qualitative', 'arts_landscape', 'experience', 'passion', 'english', 'computing', 'research', 'archiving')
 
   # averageRating: Ember.computed(->
   #   r     = @get('rating')
