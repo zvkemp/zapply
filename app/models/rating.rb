@@ -8,7 +8,9 @@ class Rating < ActiveRecord::Base
     :experience, # administration and marketing experience
     :passion, # passion for arts
     :english, # => writing
-    :computing # => computer wrangling
+    :computing, # => computer wrangling
+    :research,
+    :archiving
     
     # :web_production, #
     # :social_media
