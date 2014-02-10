@@ -15,15 +15,21 @@
         {{/each}}
       </tr>
     </thead>
+    
     <tr>
-      <td>quantitative skills:</td>
-      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.quantitative"}}</td>
-      {{#each ratings}}<td>{{quantitative}}</td>{{/each}}
+      <td>writing &amp; communication:</td>
+      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.english"}}</td>
+      {{#each ratings}}<td>{{english}}</td>{{/each}}
     </tr>
     <tr>
-      <td>qualitative skills:</td>
-      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.qualitative"}}</td>
-      {{#each ratings}}<td>{{qualitative}}</td>{{/each}}
+      <td>research experience:</td>
+      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.research"}}</td>
+      {{#each ratings}}<td>{{research}}</td>{{/each}}
+    </tr>
+    <tr>
+      <td>archiving experience:</td>
+      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.archiving"}}</td>
+      {{#each ratings}}<td>{{archiving}}</td>{{/each}}
     </tr>
     <tr>
       <td>knowledge of arts sector:</td>
@@ -31,26 +37,15 @@
       {{#each ratings}}<td>{{arts_landscape}}</td>{{/each}}
     </tr>
     <tr>
-      <td>administration &amp; marketing xp:</td>
-      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.experience"}}</td>
-      {{#each ratings}}<td>{{experience}}</td>{{/each}}
-    </tr>
-    <tr>
       <td>passion for arts:</td>
       <td>{{view Zapply.RatingsSelector valueBinding="current_rating.passion"}}</td>
       {{#each ratings}}<td>{{passion}}</td>{{/each}}
-    </tr>
-    <tr>
-      <td>writing &amp; communication:</td>
-      <td>{{view Zapply.RatingsSelector valueBinding="current_rating.english"}}</td>
-      {{#each ratings}}<td>{{english}}</td>{{/each}}
     </tr>
     <tr>
       <td>computer wrangling:</td>
       <td>{{view Zapply.RatingsSelector valueBinding="current_rating.computing"}}</td>
       {{#each ratings}}<td>{{computing}}</td>{{/each}}
     </tr>
-
   </table>
 
   <table class="table-condensed table">

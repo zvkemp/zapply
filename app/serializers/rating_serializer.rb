@@ -9,7 +9,9 @@ class RatingSerializer < ActiveModel::Serializer
     :computing, # => computer wrangling
     :applicant_id,
     :rater_id,
-    :rater_name
+    :rater_name,
+    :research,
+    :archiving
 
   def rater_name
     object.rater.name

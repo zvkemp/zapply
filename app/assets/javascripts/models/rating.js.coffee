@@ -19,6 +19,8 @@ Zapply.Rating = DS.Model.extend
     'passion'
     'english'
     'computing'
+    'research'
+    'archiving'
   ]
 
   average: (->
