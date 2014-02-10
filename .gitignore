@@ -23,3 +23,4 @@ e# See http://help.github.com/ignore-files/ for more about ignoring files.
 
 config/hosts_config.yml
 config/app_secret
+*.swp
