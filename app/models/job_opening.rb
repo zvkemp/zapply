@@ -4,7 +4,7 @@ class JobOpening < ActiveRecord::Base
 
 
   def self.current
-    last
+    first
   end
 
 end
