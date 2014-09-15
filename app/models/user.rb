@@ -7,27 +7,35 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :submitted, :note, :name,
-    :application_confirmation_sent, :under_consideration, :rejection_notice_sent
+    :application_confirmation_sent, :under_consideration, :rejection_notice_sent, :dormant
   # attr_accessible :title, :body
 
   has_many :documents
   has_many :ratings, foreign_key: :applicant_id
   has_many :applicant_ratings, :class_name => "Rating", foreign_key: :rater_id
 
+  def self.active
+    where(dormant: false)
+  end
+
+  def self.dormant
+    where(dormant: true)
+  end
+
   def self.applicants
-    where(admin: false)
+    active.where(admin: false)
   end
 
   def self.under_consideration
-    where(under_consideration: true)
+    active.where(under_consideration: true)
   end
 
   def self.rejected
-    where(under_consideration: false)
+    active.where(under_consideration: false)
   end
 
   def self.submitted
-    where(submitted: true)
+    active.where(submitted: true)
   end
 
   def submit!

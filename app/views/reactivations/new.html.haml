@@ -1,0 +1,12 @@
+.container
+  .row
+    -if notice
+      .alert.alert-info
+        = notice
+    -if alert
+      .alert.alert-info
+        %button.close{ type: "button", :"data-dismiss" => "alert" } &times;
+        = alert
+
+  .row
+    =link_to "Reactivate my account", reactivations_path, :method => :create, :class => "btn btn-success btn-large"

@@ -3,6 +3,7 @@ ZapplyLite::Application.routes.draw do
 
   root to: 'home#index'
 
+  resources :reactivations, only: [:new, :create]
   namespace :api do
     resources :sessions
     resources :documents

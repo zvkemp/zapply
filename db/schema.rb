@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140210230928) do
+ActiveRecord::Schema.define(:version => 20140915191851) do
 
   create_table "documents", :force => true do |t|
     t.string   "description"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20140210230928) do
     t.boolean  "application_confirmation_sent", :default => false
     t.boolean  "under_consideration",           :default => true
     t.boolean  "rejection_notice_sent",         :default => false
+    t.boolean  "dormant",                       :default => false
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
