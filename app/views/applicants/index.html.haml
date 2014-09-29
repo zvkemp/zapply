@@ -1,0 +1,7 @@
+%table.table
+  -@applicants.each do |applicant|
+    %tr
+      %td= applicant.id
+      %td= applicant.email 
+      %td= applicant.name
+      %td= link_to "SIGN IN", applicant_sign_in_path(applicant.id), method: :post, :class => "btn btn-warning"

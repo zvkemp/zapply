@@ -18,4 +18,8 @@ ZapplyLite::Application.routes.draw do
   resources :downloads, only: [:show]
   resources :images, only: [:show]
 
+  resources :applicants, only: [:index] do
+    resource :sign_in, only: [:create]
+  end
+ 
 end
